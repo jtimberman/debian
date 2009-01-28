@@ -1,0 +1,21 @@
+This package was debianized by Bryan McLellan <btm@loftninjas.org> on
+Mon, 26 Jan 2009 20:38:53 -0800.
+
+It was downloaded from <http://rubyforge.org/projects/stomp/>
+
+Upstream Author:
+
+    Brian McCallister <brianm@apache.org>
+
+Copyright:
+
+    <Copyright © 2005-2006 Brian McCallister>
+    <Copyright © 2006 LogicBlaze Inc>
+
+License:
+
+    This software is licensed under the the Apache 2.0 license,
+    please see '/usr/share/common-licenses/Apache-2.0'
+
+The Debian packaging is © 2009, Bryan McLellan <btm@loftninjas.org> and
+is licensed under the GPL, see `/usr/share/common-licenses/GPL'.

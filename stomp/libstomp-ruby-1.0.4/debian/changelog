@@ -1,0 +1,6 @@
+libstomp-ruby (1.0.4-1) unstable; urgency=low
+
+  * Initial release (Closes: Bug#513324)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Mon, 26 Jan 2009 20:38:53 -0800
+
