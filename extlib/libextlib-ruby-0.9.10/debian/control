@@ -1,0 +1,57 @@
+Source: libextlib-ruby
+Section: libs
+Priority: extra
+Maintainer: Bryan McLellan <btm@loftninjas.org>
+Build-Depends: cdbs, debhelper (>= 4.0.0)
+Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, libsetup-ruby1.8, ruby1.8, ruby1.9
+Standards-Version: 3.8.0
+Homepage: http://rubyforge.org/projects/extlib/
+
+Package: libextlib-ruby
+Architecture: all
+Depends: libextlib-ruby1.8, ${misc:Depends}
+Suggests: libextlib-ruby-doc
+Description: General Ruby class extensions for DM and Merb
+ General Ruby class extensions serving DataMapper and Merb.
+ Provides a lightweight fast String extensions library, and 
+ Mash (Hash with indifferent access) which can be used in
+ other projects as well.
+ .
+ This package is a dependency package, which depends on the package
+ containing actual Ruby extlib libraries for the default Ruby version
+ (currently 1.8).
+
+Package: libextlib-ruby1.8
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8
+Description: General Ruby 1.8 class extensions for DM and Merb
+ General Ruby class extensions serving DataMapper and Merb.
+ Provides a lightweight fast String extensions library, and 
+ Mash (Hash with indifferent access) which can be used in
+ other projects as well.
+ .
+ This package contains extlib libraries for Ruby 1.8.
+
+Package: libextlib-ruby1.9
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.9
+Description: General Ruby 1.9 class extensions for DM and Merb
+ General Ruby class extensions serving DataMapper and Merb.
+ Provides a lightweight fast String extensions library, and 
+ Mash (Hash with indifferent access) which can be used in
+ other projects as well.
+ .
+ This package contains extlib libraries for Ruby 1.9.
+
+Package: libextlib-ruby-doc
+Section: doc
+Architecture: all
+Depends: libextlib-ruby, ${misc:Depends}
+Description: Documentation for libextlib-ruby
+ General Ruby class extensions serving DataMapper and Merb.
+ Provides a lightweight fast String extensions library, and 
+ Mash (Hash with indifferent access) which can be used in
+ other projects as well.
+ .
+ This package provides generated HTML documentation for libextlib-ruby.
+

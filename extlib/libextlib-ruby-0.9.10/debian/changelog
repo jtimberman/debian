@@ -1,0 +1,6 @@
+libextlib-ruby (0.9.10-1) unstable; urgency=low
+
+  * Initial release (Closes: Bug#513295)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Mon, 26 Jan 2009 20:38:53 -0800
+
