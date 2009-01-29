@@ -1,0 +1,6 @@
+libabstract-ruby (1.0.0-1) unstable; urgency=low
+
+  * Initial Release (Closes: #509284)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Sat, 20 Dec 2008 02:13:39 -0800
+

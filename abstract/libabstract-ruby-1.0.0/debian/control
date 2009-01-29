@@ -1,0 +1,52 @@
+Source: libabstract-ruby
+Section: libs
+Priority: extra
+Maintainer: Bryan McLellan <btm@loftninjas.org>
+Build-Depends: cdbs, debhelper (>= 4.0.0)
+Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, ruby1.8, ruby1.9, libsetup-ruby1.8
+Standards-Version: 3.8.0
+
+Package: libabstract-ruby
+Architecture: all
+Depends: libabstract-ruby1.8, ${misc:Depends}
+Suggests: libabstract-ruby-doc
+Description: A library which enables you to define abstract method in Ruby
+ An abstract method is a dummy method which is not implemented
+ It can be used as a placeholder to be overridden later to help build a 
+ framework.
+ .
+ This package is a dependency package, which depends on the package
+ containing actual Ruby abstract library for the default Ruby version
+ (currently 1.8).
+
+Package: libabstract-ruby1.8
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8
+Description: A library which enables you to define abstract method in Ruby 1.8
+ An abstract method is a dummy method which is not implemented
+ It can be used as a placeholder to be overridden later to help build a 
+ framework.
+ .
+ This package contains abstract library for Ruby 1.8.
+
+Package: libabstract-ruby1.9
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.9
+Description: A library which enables you to define abstract method in Ruby 1.9
+ An abstract method is a dummy method which is not implemented
+ It can be used as a placeholder to be overridden later to help build a 
+ framework.
+ .
+ This package contains abstract library for Ruby 1.9.
+
+Package: libabstract-ruby-doc
+Section: doc
+Architecture: all
+Depends: libabstract-ruby, ${misc:Depends}
+Description: Documentation for libabstract-ruby
+ An abstract method is a dummy method which is not implemented
+ It can be used as a placeholder to be overridden later to help build a 
+ framework.
+ .
+ This package provides generated HTML documentation for libabstract-ruby.
+

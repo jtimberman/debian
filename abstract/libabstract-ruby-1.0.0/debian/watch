@@ -1,0 +1,4 @@
+version=2
+http://rubyforge.org/frs/?group_id=1444 \
+  .*/abstract_([\d\.]*).tar.bz2
+
