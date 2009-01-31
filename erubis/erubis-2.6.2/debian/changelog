@@ -1,0 +1,6 @@
+erubis (2.6.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #509254)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Sat, 20 Dec 2008 01:43:52 -0800
+

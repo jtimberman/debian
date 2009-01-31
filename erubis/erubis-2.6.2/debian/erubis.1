@@ -1,0 +1,174 @@
+.TH ERUBIS "1" "January 2009" "erubis 2.6.2" "User Commands"
+.SH NAME
+erubis \- eRuby style template engine for multiple languages
+.SH SYNOPSIS
+.B erubis
+[..\fIoptions\fR..] [\fIfile \fR...]
+.SH DESCRIPTION
+Embedded templating engine for multiple languages. 
+Erubis will take a template file as input and output code to convey that data in the language specified.
+The following output languages are supported:
+.IP
+ * Ruby
+ * PHP
+ * C
+ * Java
+ * Scheme
+ * Perl
+ * JavaScript
+.SH OPTIONS
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+help
+.TP
+\fB\-v\fR
+version
+.TP
+\fB\-x\fR
+show converted code
+.TP
+\fB\-X\fR
+show converted code, only ruby code and no text part
+.TP
+\fB\-N\fR
+numbering: add line numbers            (for '\-x/\-X')
+.TP
+\fB\-U\fR
+unique: compress empty lines to a line (for '\-x/\-X')
+.TP
+\fB\-C\fR
+compact: remove empty lines            (for '\-x/\-X')
+.TP
+\fB\-b\fR
+body only: no preamble nor postamble   (for '\-x/\-X')
+.TP
+\fB\-z\fR
+syntax checking
+.TP
+\fB\-e\fR
+escape (equal to '\-\-E Escape')
+.TP
+\fB\-p\fR pattern
+embedded pattern (default '<% %>')
+.TP
+\fB\-l\fR lang
+convert but no execute (ruby/php/c/java/scheme/perl/js)
+.TP
+\fB\-E\fR e1,e2,...
+enhancer names (Escape, PercentLine, BiPattern, ...)
+.TP
+\fB\-I\fR path
+library include path
+.TP
+\fB\-K\fR kanji
+kanji code (euc/sjis/utf8) (default none)
+.TP
+\fB\-c\fR context
+context data string (yaml inline style or ruby code)
+.TP
+\fB\-f\fR datafile
+context data file ('*.yaml', '*.yml', or '*.rb')
+.TP
+\fB\-T\fR
+don't expand tab characters in YAML file
+.TP
+\fB\-S\fR
+convert mapping key from string to symbol in YAML file
+.TP
+\fB\-B\fR
+invoke 'result(binding)' instead of 'evaluate(context)'
+.TP
+\fB\-\-pi\fR=\fIname\fR
+parse '<?name ... ?>' instead of '<% ... %>'
+.SS "supported properties:"
+.IP
+* (common)
+.TP
+\fB\-\-escapefunc\fR=\fInil\fR
+: escape function name
+.TP
+\fB\-\-pattern=\fR"<% %>"
+: embed pattern
+.TP
+\fB\-\-trim\fR=\fItrue\fR
+: trim spaces around <% ... %>
+.TP
+\fB\-\-preamble\fR=\fInil\fR
+: preamble (no preamble when false)
+.TP
+\fB\-\-postamble\fR=\fInil\fR
+: postamble (no postamble when false)
+.TP
+\fB\-\-escape\fR=\fInil\fR
+: escape expression or not in default
+.IP
+* (basic)
+* (pi)
+.TP
+\fB\-\-pi=\fR"rb"
+: PI (Processing Instrunctions) name
+.TP
+\fB\-\-embchar=\fR"@"
+: char for embedded expression pattern('@{...}@')
+.IP
+* ruby
+* php
+* c
+.TP
+\fB\-\-indent=\fR""
+: indent spaces (ex. '  ')
+.TP
+\fB\-\-out=\fR"stdout"
+: output file pointer name
+.IP
+* java
+.TP
+\fB\-\-indent=\fR""
+: indent spaces (ex. '  ')
+.TP
+\fB\-\-buf=\fR"_buf"
+: output buffer name
+.HP
+\fB\-\-bufclass=\fR"StringBuffer" : output buffer class (ex. 'StringBuilder')
+.IP
+* scheme
+.TP
+\fB\-\-func=\fR"_add"
+: function name (ex. 'display')
+.IP
+* perl
+.TP
+\fB\-\-func=\fR"print"
+: function name
+.IP
+* javascript
+.TP
+\fB\-\-docwrite\fR=\fItrue\fR
+: use 'document.write()' when true
+.SH EXAMPLES
+
+Run 'erubis \-l php example.ephp' to convert the embedded document to php code.
+
+\fBexample.ephp:\fR
+ <?xml version="1.0"?>
+ <html>
+  <body>
+   <p>Hello <%= $user %>!</p>
+   <table>
+    <tbody>
+     <% $i = 0; %>
+     <% foreach ($list as $item) { %>
+     <%   $i++; %>
+     <tr bgcolor="<%= $i % 2 == 0 ? '#FFCCCC' : '#CCCCFF' %>">
+      <td><%= $i %></td>
+      <td><%== $item %></td>
+     </tr>
+     <% } %>
+    </tbody>
+   </table>
+  </body>
+ </html>
+
+.SH SEE ALSO
+
+http://rubyforge.org/projects/erubis/

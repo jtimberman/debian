@@ -1,0 +1,98 @@
+Source: erubis
+Section: libs
+Priority: extra
+Maintainer: Bryan McLellan <btm@loftninjas.org>
+Build-Depends: cdbs, debhelper (>= 4.0.0)
+Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, ruby1.8, ruby1.9
+Standards-Version: 3.8.0
+Homepage: http://www.kuwata-lab.com/erubis/
+
+Package: erubis
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, liberubis-ruby1.8
+Suggests: erubis-doc
+Description: An embedded program converter for multiple languages
+ Erubis is a very fast eRuby implementation
+  * Multi-language support (Ruby/PHP/C/Java/Scheme/Perl/Javascript)
+  * Auto escaping support
+  * Auto trimming spaces around '<% %>'
+  * Embedded pattern changeable (default '<% %>')
+  * Enable to handle Processing Instructions (PI) as embedded pattern
+  * Print statement available
+  * Easy to extend and customize in subclass
+  * Ruby on Rails support
+ .
+
+Package: liberubis-ruby
+Architecture: all
+Depends: ${misc:Depends}, liberubis-ruby1.8
+Suggests: erubis-doc
+Description: A very fast eRuby implementation for ruby
+ Erubis is a very fast eRuby implementation
+  * Multi-language support (Ruby/PHP/C/Java/Scheme/Perl/Javascript)
+  * Auto escaping support
+  * Auto trimming spaces around '<% %>'
+  * Embedded pattern changeable (default '<% %>')
+  * Enable to handle Processing Instructions (PI) as embedded pattern
+  * Print statement available
+  * Easy to extend and customize in subclass
+  * Ruby on Rails support
+ .
+ This package is a dependency package, which depends on the package
+ containing actual Ruby extlib libraries for the default Ruby version
+ (currently 1.8).
+
+
+Package: liberubis-ruby1.8
+Architecture: all
+Depends: ${misc:Depends}, ruby1.8, libabstract-ruby1.8
+Suggests: erubis-doc
+Description: A very fast eRuby implementation for Ruby 1.8
+ Erubis is a very fast eRuby implementation
+  * Multi-language support (Ruby/PHP/C/Java/Scheme/Perl/Javascript)
+  * Auto escaping support
+  * Auto trimming spaces around '<% %>'
+  * Embedded pattern changeable (default '<% %>')
+  * Enable to handle Processing Instructions (PI) as embedded pattern
+  * Print statement available
+  * Easy to extend and customize in subclass
+  * Ruby on Rails support
+ .
+ This package contains extlib libraries for Ruby 1.8.
+
+
+Package: liberubis-ruby1.9
+Architecture: all
+Depends: ${misc:Depends}, ruby1.9, libabstract-ruby1.9
+Suggests: erubis-doc
+Description: A very fast eRuby implementation for Ruby 1.9
+ Erubis is a very fast eRuby implementation
+  * Multi-language support (Ruby/PHP/C/Java/Scheme/Perl/Javascript)
+  * Auto escaping support
+  * Auto trimming spaces around '<% %>'
+  * Embedded pattern changeable (default '<% %>')
+  * Enable to handle Processing Instructions (PI) as embedded pattern
+  * Print statement available
+  * Easy to extend and customize in subclass
+  * Ruby on Rails support
+ .
+ This package contains extlib libraries for Ruby 1.9.
+
+Package: erubis-doc
+Section: doc
+Architecture: all
+Depends: erubis, ${misc:Depends}
+Description: Documentation for erubis
+ Erubis is a very fast eRuby implementation
+  * Multi-language support (Ruby/PHP/C/Java/Scheme/Perl/Javascript)
+  * Auto escaping support
+  * Auto trimming spaces around '<% %>'
+  * Embedded pattern changeable (default '<% %>')
+  * Enable to handle Processing Instructions (PI) as embedded pattern
+  * Print statement available
+  * Easy to extend and customize in subclass
+  * Ruby on Rails support
+ .
+ This package provides generated HTML documentation for erubis.
+
+

@@ -1,0 +1,57 @@
+#!/usr/bin/make -f
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/ruby-pkg-tools/1/class/ruby-common.mk
+#include /usr/share/ruby-pkg-tools/1/class/ruby-setup-rb.mk
+
+export DH_VERBOSE=1
+
+PACKAGED_RUBY_SETUP_CMD = /usr/lib/ruby/1.8/setup.rb
+DEB_RUBY_SETUP_CMD = debian-setup.rb
+DEB_RUBY_CONFIG_ARGS = --installdirs=std
+
+# command to install symlink to packaged setup.rb: used in both build and clean
+# targets
+DEB_RUBY_INSTALL_SETUP_CMD = \
+  if [ ! -L $(DEB_RUBY_SETUP_CMD) ] ; then \
+    if [ -f $(DEB_RUBY_SETUP_CMD) ] ; then \
+      mv $(DEB_RUBY_SETUP_CMD) $(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ;\
+    fi ; \
+    ln -s $(PACKAGED_RUBY_SETUP_CMD) $(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
+DEB_RUBY_REMOVE_SETUP_CMD = \
+  if [ -L $(DEB_RUBY_SETUP_CMD) ] ; then \
+    rm $(DEB_RUBY_SETUP_CMD) ; \
+  fi ; \
+  if [ -f $(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ] ; then \
+    mv $(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build $(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
+
+install/liberubis-ruby1.8::
+	$(DEB_RUBY_INSTALL_SETUP_CMD)
+	cd $(DEB_SRCDIR) && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS) && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup
+	cd $(DEB_SRCDIR) && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=debian/$(cdbs_curpkg)
+	mv $(CURDIR)/debian/liberubis-ruby1.8/usr/bin/erubis $(CURDIR)/debian/erubis/usr/bin/erubis
+	rmdir $(CURDIR)/debian/liberubis-ruby1.8/usr/bin/
+
+install/liberubis-ruby1.9::
+	$(DEB_RUBY_INSTALL_SETUP_CMD)
+	cd $(DEB_SRCDIR) && /usr/bin/ruby1.9 $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS) && /usr/bin/ruby1.9 $(DEB_RUBY_SETUP_CMD) setup
+	cd $(DEB_SRCDIR) && /usr/bin/ruby1.9 $(DEB_RUBY_SETUP_CMD) install --prefix=debian/$(cdbs_curpkg)
+	rm -f $(CURDIR)/debian/liberubis-ruby1.9/usr/bin/erubis
+	rmdir $(CURDIR)/debian/liberubis-ruby1.9/usr/bin/
+
+install/erubis::
+	dh_installchangelogs CHANGES.txt
+	dh_installman debian/erubis.1
+	dh_installdirs
+
+clean::
+	$(DEB_RUBY_INSTALL_SETUP_CMD)
+	/usr/bin/ruby $(DEB_RUBY_SETUP_CMD) distclean
+	$(DEB_RUBY_REMOVE_SETUP_CMD)
+	rm -f $(DEB_SRCDIR)/.config
+	rm -f $(DEB_SRCDIR)/InstalledFiles
+
+
