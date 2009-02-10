@@ -1,0 +1,6 @@
+ohai (0.1.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #514680)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Mon, 09 Feb 2009 15:57:23 -0800
+
