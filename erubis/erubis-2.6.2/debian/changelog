@@ -1,3 +1,9 @@
+erubis (2.6.2-2) unstable; urgency=low
+
+  * Add additional notices to copyright file
+
+ -- Bryan McLellan <btm@loftninjas.org>  Wed, 18 Mar 2009 14:36:38 -0700
+
 erubis (2.6.2-1) unstable; urgency=low
 
   * Initial release (Closes: #509254)
