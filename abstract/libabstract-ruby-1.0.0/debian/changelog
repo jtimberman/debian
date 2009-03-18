@@ -1,3 +1,9 @@
+libabstract-ruby (1.0.0-2) unstable; urgency=low
+
+  * Include updated package descriptions (Closes: #520219)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Wed, 18 Mar 2009 14:16:13 -0700
+
 libabstract-ruby (1.0.0-1) unstable; urgency=low
 
   * Initial Release (Closes: #509284)
