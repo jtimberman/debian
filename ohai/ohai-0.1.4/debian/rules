@@ -3,6 +3,8 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/ruby-pkg-tools/1/class/ruby-common.mk
 #include /usr/share/ruby-pkg-tools/1/class/ruby-setup-rb.mk
 
+CDBS_NO_DOC_SYMLINKING = ""
+
 PACKAGED_RUBY_SETUP_CMD = /usr/lib/ruby/1.8/setup.rb
 DEB_RUBY_SETUP_CMD = debian-setup.rb
 DEB_RUBY_CONFIG_ARGS = --installdirs=std
@@ -41,7 +43,8 @@ install/libohai-ruby1.9::
 	rmdir $(CURDIR)/debian/libohai-ruby1.9/usr/bin/
 
 install/ohai::
-	#dh_installman debian/ohai.1
+	dh_installman debian/ohai.1
+	dh_installchangelogs
 	dh_installdirs
 
 clean::

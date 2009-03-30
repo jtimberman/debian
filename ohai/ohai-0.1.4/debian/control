@@ -11,7 +11,7 @@ Package: ohai
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, libohai-ruby1.8
 Suggests: ohai-doc
-Description: Detects data about your operating system and reports it in JSON
+Description: Detects data about your system and reports it in JSON
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
    * Operating system and kernel
@@ -24,7 +24,7 @@ Package: libohai-ruby
 Architecture: all
 Depends: ${misc:Depends}, libohai-ruby1.8
 Suggests: ohai-doc
-Description: Detects data about your operating system and reports it in JSON
+Description: Ruby library to report data about your system
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
    * Operating system and kernel
@@ -41,7 +41,7 @@ Package: libohai-ruby1.8
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, libextlib-ruby1.8, libjson-ruby1.8
 Suggests: ohai-doc
-Description: Detects data about your operating system and reports it in JSON
+Description: Ruby 1.8 library to report data about your system
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
    * Operating system and kernel
@@ -57,7 +57,7 @@ Package: libohai-ruby1.9
 Architecture: all
 Depends: ${misc:Depends}, ruby1.9, libextlib-ruby1.9, libjson-ruby1.9
 Suggests: ohai-doc
-Description: Detects data about your operating system and reports it in JSON
+Description: Ruby 1.9 library to report data about your system
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
    * Operating system and kernel
