@@ -72,9 +72,9 @@ setup.rb:
     see '/usr/share/common-licenses/LGPL-2.1'
 
 The Debian packaging is © 2009, Bryan McLellan <btm@loftninjas.org> and
-is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+is licensed under the GPL version 2, see `/usr/share/common-licenses/GPL-2'.
 
 The manual page for erubis included in the package is © 2009 
-Bryan McLellan <btm@loftninjas.org> and is licensed under the GPL, 
-see `/usr/share/common-licenses/GPL'.
+Bryan McLellan <btm@loftninjas.org> and is licensed under the GPL version 2, 
+see `/usr/share/common-licenses/GPL-2'.
 
