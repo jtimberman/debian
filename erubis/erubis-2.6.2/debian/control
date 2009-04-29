@@ -1,10 +1,10 @@
 Source: erubis
-Section: libs
+Section: ruby
 Priority: extra
 Maintainer: Bryan McLellan <btm@loftninjas.org>
-Build-Depends: cdbs, debhelper (>= 4.0.0)
+Build-Depends: cdbs, debhelper (>= 7)
 Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, ruby1.8, ruby1.9
-Standards-Version: 3.8.0
+Standards-Version: 3.8.1
 Homepage: http://www.kuwata-lab.com/erubis/
 
 Package: erubis

@@ -1,3 +1,11 @@
+erubis (2.6.2-3) unstable; urgency=low
+
+  * Bump standards version to 3.8.1
+  * Update debhelper compatibility to 7
+  * Correct GPL links to GPL-2
+
+ -- Bryan McLellan <btm@loftninjas.org>  Wed, 08 Apr 2009 11:11:15 -0700
+
 erubis (2.6.2-2) unstable; urgency=low
 
   * Add additional notices to copyright file
