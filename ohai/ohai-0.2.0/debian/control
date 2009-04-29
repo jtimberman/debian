@@ -4,14 +4,14 @@ Priority: extra
 Maintainer: Bryan McLellan <btm@loftninjas.org>
 Build-Depends: cdbs, debhelper (>= 7)
 Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, ruby1.8, ruby1.9, rdoc1.8, rdoc1.9
-Standards-Version: 3.8.0
+Standards-Version: 3.8.1
 Homepage: http://github.com/opscode/ohai/tree/master
 
 Package: ohai
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, libohai-ruby1.8
 Suggests: ohai-doc
-Description: Detects data about your system and reports it in JSON
+Description: Detects data about your operating system and reports it in JSON
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
    * Operating system and kernel
@@ -24,7 +24,7 @@ Package: libohai-ruby
 Architecture: all
 Depends: ${misc:Depends}, libohai-ruby1.8
 Suggests: ohai-doc
-Description: Ruby library to report data about your system
+Description: Library to collect data about your operating system and report it in JSON
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
    * Operating system and kernel
@@ -40,8 +40,8 @@ Description: Ruby library to report data about your system
 Package: libohai-ruby1.8
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, libextlib-ruby1.8, libjson-ruby1.8
-Suggests: libvirt-ruby1.8, libhpricot-ruby1.8, ohai-doc
-Description: Ruby 1.8 library to report data about your system
+Suggests: ohai-doc
+Description: Ruby 1.8 library to collect data about your operating system
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
    * Operating system and kernel
@@ -51,6 +51,21 @@ Description: Ruby 1.8 library to report data about your system
    * Virtualization
  .
  This package contains ohai libraries for Ruby 1.8.
+
+Package: libohai-ruby1.9
+Architecture: all
+Depends: ${misc:Depends}, ruby1.9, libextlib-ruby1.9, libjson-ruby1.9
+Suggests: ohai-doc
+Description: Ruby 1.9 library to collect data about your operating system
+ Information about your system is collected and returned as multidimensional
+ attributes in JSON format. The following information is captured:
+   * Operating system and kernel
+   * Filesystems in use
+   * Network configuration and statistics
+   * Available languages
+   * Virtualization
+ .
+ This package contains ohai libraries for Ruby 1.9.
 
 Package: ohai-doc
 Section: doc
