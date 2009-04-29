@@ -1,9 +1,9 @@
 Source: ohai
-Section: libs
+Section: ruby
 Priority: extra
 Maintainer: Bryan McLellan <btm@loftninjas.org>
 Build-Depends: cdbs, debhelper (>= 7)
-Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, ruby1.8, ruby1.9, rdoc1.8, rdoc1.9
+Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, ruby1.8
 Standards-Version: 3.8.1
 Homepage: http://github.com/opscode/ohai/tree/master
 
@@ -56,7 +56,7 @@ Package: ohai-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
-Suggests: ruby1.8 | ruby1.9
+Suggests: ruby1.8 
 Description: Documentation for ohai
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
