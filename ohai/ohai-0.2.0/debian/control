@@ -40,7 +40,7 @@ Description: Library to collect data about your operating system and report it i
 Package: libohai-ruby1.8
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, libextlib-ruby1.8, libjson-ruby1.8
-Suggests: ohai-doc
+Suggests: libvirt-ruby1.8, libhpricot-ruby1.8, ohai-doc
 Description: Ruby 1.8 library to collect data about your operating system
  Information about your system is collected and returned as multidimensional
  attributes in JSON format. The following information is captured:
@@ -51,21 +51,6 @@ Description: Ruby 1.8 library to collect data about your operating system
    * Virtualization
  .
  This package contains ohai libraries for Ruby 1.8.
-
-Package: libohai-ruby1.9
-Architecture: all
-Depends: ${misc:Depends}, ruby1.9, libextlib-ruby1.9, libjson-ruby1.9
-Suggests: ohai-doc
-Description: Ruby 1.9 library to collect data about your operating system
- Information about your system is collected and returned as multidimensional
- attributes in JSON format. The following information is captured:
-   * Operating system and kernel
-   * Filesystems in use
-   * Network configuration and statistics
-   * Available languages
-   * Virtualization
- .
- This package contains ohai libraries for Ruby 1.9.
 
 Package: ohai-doc
 Section: doc
