@@ -1,0 +1,5 @@
+libmixlib-cli-ruby (1.0.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #529535)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Tue, 19 May 2009 14:44:32 -0700

@@ -1,0 +1,31 @@
+Source: libmixlib-log-ruby
+Section: ruby
+Priority: extra
+Maintainer: Bryan McLellan <btm@loftninjas.org>
+Build-Depends: debhelper (>= 7), cdbs
+Build-Depends-Indep: ruby1.8, ruby-pkg-tools (>= 0.14), libsetup-ruby1.8
+Standards-Version: 3.8.1
+Homepage: http://github.com/opscode/mixlib-log/tree/master
+
+Package: libmixlib-log-ruby
+Architecture: all
+Depends: libmixlib-log-ruby1.8, ${shlibs:Depends}, ${misc:Depends}
+Description: A simple Ruby mixin for creating a logger object
+ Provides a class based object to provide logging. Messages can be sent at 
+ different levels such as warn or error. Logging defaults to STDOUT but
+ can also be sent to a file with simple built in rotation.
+ .
+ This package is a dependency package, which depends on the package
+ containing actual Ruby mixlib-log libraries for the default Ruby version
+ (currently 1.8).
+
+Package: libmixlib-log-ruby1.8
+Architecture: all
+Depends: ruby1.8, ${shlibs:Depends}, ${misc:Depends}
+Description: A simple Ruby 1.8 mixin for creating a logger object
+ Provides a class based object to provide logging. Messages can be sent at 
+ different levels such as warn or error. Logging defaults to STDOUT but
+ can also be sent to a file with simple built in rotation.
+ .
+ This package contains mixlib-log libraries for Ruby 1.8.
+

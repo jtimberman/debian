@@ -1,0 +1,31 @@
+Source: libmixlib-config-ruby
+Section: ruby
+Priority: extra
+Maintainer: Bryan McLellan <btm@loftninjas.org>
+Build-Depends: debhelper (>= 7), cdbs
+Build-Depends-Indep: ruby1.8, ruby-pkg-tools (>= 0.14), libsetup-ruby1.8
+Standards-Version: 3.8.1
+Homepage: http://github.com/opscode/mixlib-config/tree/master
+
+Package: libmixlib-config-ruby
+Architecture: all
+Depends: libmixlib-config-ruby1.8, ${shlibs:Depends}, ${misc:Depends}
+Description: A simple class based config mechanism for Ruby
+ Provides a class based object to store and manipulate configuration values.
+ A file can be read in to populate the object, and values can be set and
+ read from the internal hash using methods.
+ .
+ This package is a dependency package, which depends on the package
+ containing actual Ruby mixlib-config libraries for the default Ruby version
+ (currently 1.8).
+
+Package: libmixlib-config-ruby1.8
+Architecture: all
+Depends: ruby1.8, ${shlibs:Depends}, ${misc:Depends}
+Description: A simple class based config mechanism for Ruby 1.8
+ Provides a class based object to store and manipulate configuration values.
+ A file can be read in to populate the object, and values can be set and
+ read from the internal hash using methods.
+ .
+ This package contains mixlib-config libraries for Ruby 1.8.
+
