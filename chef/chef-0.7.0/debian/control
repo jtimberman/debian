@@ -1,0 +1,46 @@
+Source: chef
+Section: ruby
+Priority: extra
+Maintainer: Bryan McLellan <btm@loftninjas.org>
+Build-Depends: cdbs, debhelper (>= 7), ruby-pkg-tools (>= 0.14)
+Build-Depends-Indep: graphviz, ruby1.8
+Standards-Version: 3.8.2
+Homepage: http://github.com/opscode/chef/tree/master
+
+Package: chef
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, libchef-ruby1.8
+Suggests: chef-doc
+Description: FIXME
+ FIXME
+
+Package: libchef-ruby
+Architecture: all
+Depends: ${misc:Depends}, libchef-ruby1.8
+Suggests: chef-doc
+Description: FIXME
+ FIXME
+ .
+ This package is a dependency package, which depends on the package
+ containing actual Ruby chef libraries for the default Ruby version
+ (currently 1.8).
+
+Package: libchef-ruby1.8
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8, libmixlib-config-ruby1.8, libmixlib-cli-ruby1.8, libmixlib-log-ruby1.8, libopenid-ruby1.8, liberubis-ruby1.8, libjson-ruby1.8, libstomp-ruby1.8, libextlib-ruby1.8, libohai-ruby1.8
+Suggests: chef-doc
+Description: FIXME
+ FIXME
+ .
+ This package contains chef libraries for Ruby 1.8.
+
+Package: chef-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: ruby1.8 
+Description: FIXME
+ FIXME
+ .
+ This package provides generated HTML documentation for chef.
+

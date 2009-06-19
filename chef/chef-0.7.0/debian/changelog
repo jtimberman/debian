@@ -1,0 +1,6 @@
+chef (0.7.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #529392)
+
+ -- Bryan McLellan <btm@loftninjas.org>  Fri, 19 Jun 2009 16:03:14 -0700
+
