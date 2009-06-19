@@ -1,3 +1,10 @@
+libmixlib-log-ruby (1.0.3-2) unstable; urgency=low
+
+  * Bump standards version to 3.8.2
+  * Move ruby-pkg-tools to build-depends
+
+ -- Bryan McLellan <btm@loftninjas.org>  Fri, 19 Jun 2009 14:30:24 -0700
+
 libmixlib-log-ruby (1.0.3-1) unstable; urgency=low
 
   * Initial release (Closes: #529533)

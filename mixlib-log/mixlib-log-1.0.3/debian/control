@@ -2,9 +2,9 @@ Source: libmixlib-log-ruby
 Section: ruby
 Priority: extra
 Maintainer: Bryan McLellan <btm@loftninjas.org>
-Build-Depends: debhelper (>= 7), cdbs
-Build-Depends-Indep: ruby1.8, ruby-pkg-tools (>= 0.14), libsetup-ruby1.8
-Standards-Version: 3.8.1
+Build-Depends: debhelper (>= 7), cdbs, ruby-pkg-tools (>= 0.14)
+Build-Depends-Indep: ruby1.8, libsetup-ruby1.8
+Standards-Version: 3.8.2
 Homepage: http://github.com/opscode/mixlib-log/tree/master
 
 Package: libmixlib-log-ruby
