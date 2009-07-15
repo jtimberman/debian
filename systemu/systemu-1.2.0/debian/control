@@ -1,17 +1,18 @@
 Source: libsystemu-ruby
-Section: libs
+Section: ruby
 Priority: extra
 Maintainer: Bryan McLellan <btm@loftninjas.org>
-Build-Depends: cdbs, debhelper (>= 4.0.0)
-Build-Depends-Indep: ruby-pkg-tools (>= 0.14), graphviz, ruby1.8, ruby1.9, libsetup-ruby1.8
-Standards-Version: 3.8.0
+Build-Depends: cdbs, ruby-pkg-tools (>= 0.14), debhelper (>= 7)
+Build-Depends-Indep: graphviz, ruby1.8, ruby1.9, libsetup-ruby1.8
+Standards-Version: 3.8.2
 
 Package: libsystemu-ruby
 Architecture: all
 Depends: libsystemu-ruby1.8, ${misc:Depends}
 Suggests: libsystemu-ruby-doc
-Description: univeral capture of stdout and stderr and handling of child process pid
- A ruby library to handle spawned processes in a platform independant fashion.
+Description: univeral child process handling library
+ A ruby library to handle spawned processes in a platform independent fashion.
+ This library will capture stdout and stderr and track child process pid.
  .
  This package is a dependency package, which depends on the package
  containing actual Ruby systemu library for the default Ruby version
@@ -20,16 +21,18 @@ Description: univeral capture of stdout and stderr and handling of child process
 Package: libsystemu-ruby1.8
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8
-Description: univeral capture of stdout and stderr and handling of child process pid
- A ruby library to handle spawned processes in a platform independant fashion.
+Description: univeral child process handling library for Ruby 1.8
+ A ruby library to handle spawned processes in a platform independent fashion.
+ This library will capture stdout and stderr and track child process pid.
  .
  This package contains systemu library for Ruby 1.8.
 
 Package: libsystemu-ruby1.9
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.9
-Description: univeral capture of stdout and stderr and handling of child process pid
- A ruby library to handle spawned processes in a platform independant fashion.
+Description: univeral child process handling library for Ruby 1.9
+ A ruby library to handle spawned processes in a platform independent fashion.
+ This library will capture stdout and stderr and track child process pid.
  .
  This package contains systemu library for Ruby 1.9.
 
@@ -37,8 +40,9 @@ Package: libsystemu-ruby-doc
 Section: doc
 Architecture: all
 Depends: libsystemu-ruby, ${misc:Depends}
-Description: univeral capture of stdout and stderr and handling of child process pid
- A ruby library to handle spawned processes in a platform independant fashion.
+Description: Documentation for libsystemu-ruby
+ A ruby library to handle spawned processes in a platform independent fashion.
+ This library will capture stdout and stderr and track child process pid.
  .
  This package provides generated HTML documentation for libsystemu-ruby.
 
