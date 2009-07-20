@@ -1,0 +1,30 @@
+Source: stompserver
+Section: ruby
+Priority: extra
+Maintainer: Bryan McLellan <btm@loftninjas.org>
+Uploaders: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-ruby-extras/packages/stompserver/trunk/
+Vcs-Svn: svn://svn.debian.org/pkg-ruby-extras/packages/stompserver/trunk/
+Build-Depends: cdbs, debhelper (>= 7), ruby-pkg-tools (>= 0.14)
+Build-Depends-Indep: graphviz, ruby1.8
+Standards-Version: 3.8.2
+Homepage: http://stompserver.rubyforge.org/
+
+Package: stompserver
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, ruby1.8
+Suggests: stompserver-doc
+Description: a stomp messaging server implemented in ruby
+ Stompserver is a stomp messaging server with file/dbm/memory/activerecord
+ based FIFO queues, queue monitoring, and basic authentication.
+
+Package: stompserver-doc
+Section: doc
+Architecture: all
+Recommends: stompserver
+Description: documentation for stompserver
+ Stompserver is a stomp messaging server with file/dbm/memory/activerecord
+ based FIFO queues, queue monitoring, and basic authentication.
+ .
+ This package provides generated HTML documentation for stompserver.
+
