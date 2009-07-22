@@ -1,8 +1,15 @@
 #!/usr/bin/make -f
+export DH_VERBOSE=1
+
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/ruby-pkg-tools/1/class/ruby-setup-rb.mk
 
-configure/stompserver-doc::
-	rdoc --op doc/rdoc lib/
+DEB_RUBY_CONFIG_ARGS += --shebang=all
+
+binary-install/stompserver::
+	dh_rdoc -pstompserver
+	dh_installman debian/stompserver.1
+	dh_installexamples config/stompserver.conf
+	dh_installexamples etc/passwd.example
 

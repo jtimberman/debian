@@ -3,7 +3,7 @@ Fri, 17 Jul 2009 16:38:07 -0700.
 
 It was downloaded from <http://rubyforge.org/projects/stompserver/>
 
-Upstream Author(s):
+Upstream Authors:
 
     Patrick Hurley <phurley@gmail.com>
     Lionel Bouton
@@ -43,5 +43,11 @@ setup.rb:
     the GNU Lesser General Public License version 2.1,
     see '/usr/share/common-licenses/LGPL-2.1'
 
-The Debian packaging is copyright 2009, Bryan McLellan <btm@loftninjas.org> and
+debian/stompserver.1:
+
+    The manual page included is compiled from existing package documentation, which
+    is released under the terms of the MIT license which is listed above in the
+    License section.
+
+The Debian packaging is Copyright 2009, Bryan McLellan <btm@loftninjas.org> and
 is licensed under the GPL version 2, see `/usr/share/common-licenses/GPL-2'.
