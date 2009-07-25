@@ -1,5 +1,0 @@
-stompserver (0.9.9-1) unstable; urgency=low
-
-  * Initial release (Closes: #537410)
-
- -- Bryan McLellan <btm@loftninjas.org>  Fri, 17 Jul 2009 16:38:07 -0700

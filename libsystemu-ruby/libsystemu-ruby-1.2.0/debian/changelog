@@ -1,5 +1,0 @@
-libsystemu-ruby (1.2.0-1) unstable; urgency=low
-
-  * Initial release (Closes: #536810)
-
- -- Bryan McLellan <btm@loftninjas.org>  Wed, 15 Jul 2009 11:48:59 -0700
