@@ -7,17 +7,17 @@ Build-Depends-Indep: ruby1.8
 Standards-Version: 3.8.2
 Homepage: http://merbivore.com
 
-Package: libmerb-ruby-doc
-Section: doc
+Package: libmerb-ruby
 Architecture: all
-Depends: ${misc:Depends}
-Suggests: ruby1.8
-Description: Documentation for Merb
+Depends: ${misc:Depends}, merb-core
+Suggests: libmerb-ruby-doc
+Description: Merb is a lightweight Ruby MVC framework for web development
  Ruby-based MVC framework that is agnostic to ORM, JavaScript library,
  and template languages. Merb is plugin-based, so the core is small and
  well organized.
  .
- This package provides generated HTML documentation (rdoc) for Merb.
+ This package is a dependency package that will install the core merb 
+ library and binaries.
 
 Package: merb-core
 Architecture: all
@@ -54,7 +54,7 @@ Description: Core libraries for the Merb MVC framework
 
 Package: libmerb-core-ruby1.8
 Architecture: all
-Depends: ${misc:Depends}, ruby1.8
+Depends: ${misc:Depends}, ruby1.8, libextlib-ruby (>=0.9.8), liberubis-ruby (>=2.6.2), rake, libjson-ruby, librack-ruby, libmime-types-ruby
 Suggests: libmerb-ruby-doc
 Description: Core libraries for the Merb MVC framework
  Ruby-based MVC framework that is agnostic to ORM, JavaScript library,
@@ -160,3 +160,15 @@ Description: Ruby 1.8 library to support merb-slices application modularization
  etc.
  .
  This package contains the merb-slices libraries for Ruby 1.8.
+
+Package: libmerb-ruby-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: ruby1.8
+Description: Documentation for Merb
+ Ruby-based MVC framework that is agnostic to ORM, JavaScript library,
+ and template languages. Merb is plugin-based, so the core is small and
+ well organized.
+ .
+ This package provides generated HTML documentation (rdoc) for Merb.

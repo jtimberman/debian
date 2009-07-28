@@ -1,5 +1,5 @@
 merb (1.0.10-1) unstable; urgency=low
 
-  * Initial release.
+  * Initial release (Closes: #538928)
 
- -- Joshua Timberman <joshua@opscode.com>  Fri, 24 Jul 2009 15:10:28 -0600
+ -- Joshua Timberman <joshua@opscode.com>  Mon, 27 Jul 2009 21:49:57 -0600
