@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
-#
-# CDBS file to build the Merb Ruby packages.
-
+# -*- makefile -*-
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/ruby-pkg-tools/1/class/ruby-common.mk
 
@@ -30,9 +28,10 @@ DEB_RUBY_REMOVE_SETUP_CMD = \
   fi
 
 install/merb-core::
-	dh_installman debian/ohai.1
+	dh_installman debian/merb.1
 	dh_installchangelogs
 	dh_installdirs
+	cd merb-core; GEM_DIR=$(shell readlink -f debian/merb-core) rake install
 
 install/libmerb-core-ruby1.8::
 	$(DEB_RUBY_INSTALL_SETUP_CMD)

@@ -1,5 +1,5 @@
-merb (1.0.10-1) unstable; urgency=low
+merb (1.0.12-1) unstable; urgency=low
 
-  * Initial release (Closes: #538928)
+   * Initial release (Closes: #538928)
 
- -- Joshua Timberman <joshua@opscode.com>  Mon, 27 Jul 2009 21:49:57 -0600
+ -- Joshua Timberman <joshua@opscode.com>  Mon, 27 Jul 2009 23:38:37 -0600
