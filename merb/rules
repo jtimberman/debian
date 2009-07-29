@@ -153,7 +153,7 @@ install/libmerb-helpers-ruby1.8::
 
 install/libmerb-ruby-doc::
 	#dh_rdoc -p libmerb-core-ruby
-	rdoc --all --inline-source --diagram --fileboxes --line-numbers --fmt=html -o $(cdbs_curpkg)
+	rdoc --all --inline-source --diagram --fileboxes --line-numbers --fmt=html -o $(cdbs_curpkg)/usr/share/doc/libmerb-ruby-doc/rdoc merb-core/lib merb-haml/lib merb-helpers/lib merb-assets/lib merb-slices/lib lib
 	#mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
 	#mv $(CURDIR)/debian/libmerb-core-ruby/usr/share/doc/libmerb-core-ruby/rdoc \
 	  #$(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
