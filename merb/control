@@ -115,10 +115,10 @@ Depends: ${misc:Depends}, libmerb-helpers-ruby1.8
 Suggests: libmerb-ruby-doc
 Description: Plugin library for Merb that provides view helpers
  This plugin provides the following helpers for your views:
-	* form_helpers
-	* date_time_helpers
-	* tag_helpers
-	* text_helpers
+  * form_helpers
+  * date_time_helpers
+  * tag_helpers
+  * text_helpers
  See the RDOC documentation and the package README for more information.
  .
  This package is a dependency package, which depends on the package
