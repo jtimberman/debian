@@ -120,7 +120,8 @@ install/libmerb-core-ruby1.8::
 	(cd merb-core && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS))
 	(cd merb-core && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup)
 	(cd merb-core && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libmerb-core-ruby1.8)
-	mv $(CURDIR)/debian/libmerb-core-ruby1.8/usr/bin/merb* $(CURDIR)/debian/merb-core/usr/bin/
+	mv $(CURDIR)/debian/libmerb-core-ruby1.8/usr/bin/merb $(CURDIR)/debian/merb-core/usr/bin/
+	rm $(CURDIR)/debian/libmerb-core-ruby1.8/usr/bin/merb-specs
 	rmdir $(CURDIR)/debian/libmerb-core-ruby1.8/usr/bin/
 
 install/libmerb-haml-ruby1.8::
