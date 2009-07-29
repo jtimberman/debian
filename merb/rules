@@ -152,25 +152,26 @@ install/libmerb-helpers-ruby1.8::
 	(cd merb-helpers && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libmerb-helpers-ruby1.8)
 
 install/libmerb-ruby-doc::
-	dh_rdoc -p merb-core
-	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
-	mv $(CURDIR)/debian/libmerb-core-ruby/usr/share/doc/libmerb-core-ruby/rdoc \
-	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
-	dh_rdoc -p merb-haml
-	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
-	mv $(CURDIR)/debian/libmerb-haml-ruby/usr/share/doc/libmerb-haml-ruby/rdoc \
-	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
-	dh_rdoc -p merb-helpers
-	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
-	mv $(CURDIR)/debian/libmerb-helpers-ruby/usr/share/doc/libmerb-helpers-ruby/rdoc \
-	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
-	dh_rdoc -p merb-assets
-	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
-	mv $(CURDIR)/debian/libmerb-assets-ruby/usr/share/doc/libmerb-assets-ruby/rdoc \
-	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
-	dh_rdoc -p merb-slices
-	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
-	mv $(CURDIR)/debian/libmerb-slices-ruby/usr/share/doc/libmerb-slices-ruby/rdoc \
+	#dh_rdoc -p libmerb-core-ruby
+	rdoc --all --inline-source --diagram --fileboxes --line-numbers --fmt=html -o $(cdbs_curpkg)
+	#mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
+	#mv $(CURDIR)/debian/libmerb-core-ruby/usr/share/doc/libmerb-core-ruby/rdoc \
+	  #$(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
+	#dh_rdoc -p merb-haml
+	#mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
+	#mv $(CURDIR)/debian/libmerb-haml-ruby/usr/share/doc/libmerb-haml-ruby/rdoc \
+	  #$(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
+	#dh_rdoc -p merb-helpers
+	#mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
+	#mv $(CURDIR)/debian/libmerb-helpers-ruby/usr/share/doc/libmerb-helpers-ruby/rdoc \
+	  #$(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
+	#dh_rdoc -p merb-assets
+	#mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
+	#mv $(CURDIR)/debian/libmerb-assets-ruby/usr/share/doc/libmerb-assets-ruby/rdoc \
+	  #$(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
+	#dh_rdoc -p merb-slices
+	#mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
+	#mv $(CURDIR)/debian/libmerb-slices-ruby/usr/share/doc/libmerb-slices-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
 
 clean::
