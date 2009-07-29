@@ -108,12 +108,10 @@ MERB_HELPERS_REMOVE_SETUP_CMD = \
   fi
 
 install/merb-core::
-	dh_installman debian/merb-core.1
 	dh_installchangelogs
 	dh_installdirs
 
 install/merb-slices::
-	dh_installman debian/slice.1
 	dh_installchangelogs
 	dh_installdirs
 
