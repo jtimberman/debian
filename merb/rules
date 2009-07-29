@@ -113,6 +113,7 @@ install/merb-core::
 	dh_installdirs
 
 install/merb-slices::
+	dh_installman debian/slice.1
 	dh_installchangelogs
 	dh_installdirs
 
