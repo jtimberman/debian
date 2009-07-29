@@ -27,6 +27,14 @@ Description: Merb plugin to modularize an application by creating 'slices'
  A module is set up to serve as a namespace for controller, models, helpers,
  etc.
 
+Package: merb-gen
+Architecture: all
+Depends: ${misc:Depends}, ruby1.8, libmerb-gen-ruby1.8
+Suggests: libmerb-ruby-doc
+Description: merb-gen provides application, plugin and component generators for Merb
+ Generate components for your application, or generate entirely new applications
+ and slices.
+
 Package: libmerb-core-ruby
 Architecture: all
 Depends: ${misc:Depends}, libmerb-core-ruby1.8
@@ -131,10 +139,10 @@ Depends: ${misc:Depends}, libmerb-core-ruby1.8
 Suggests: libmerb-ruby-doc
 Description: Ruby 1.8 library for Merb that provides view helpers
  This plugin provides the following helpers for your views:
-	* form_helpers
-	* date_time_helpers
-	* tag_helpers
-	* text_helpers
+  * form_helpers
+  * date_time_helpers
+  * tag_helpers
+  * text_helpers
  See the RDOC documentation and the package README for more information.
  .
  This package contains the merb-helpers libraries for Ruby 1.8.
@@ -160,6 +168,28 @@ Description: Ruby 1.8 library to support merb-slices application modularization
  Usually these slices are reusable extractions from the main application.
  A module is set up to serve as a namespace for controller, models, helpers,
  etc.
+ .
+ This package contains the merb-slices libraries for Ruby 1.8.
+
+Package: libmerb-gen-ruby
+Architecture: all
+Depends: ${misc:Depends}, libmerb-gen-ruby1.8
+Suggests: libmerb-ruby-doc
+Description: Library to support merb-gen generator
+ These libraries are used by the merb-gen program to generate various components
+ for Merb applications and slices.
+ .
+ This package is a dependency package, which depends on the package
+ containing actual Ruby merb-slices libraries for the default Ruby version
+ (currently 1.8).
+
+Package: libmerb-gen-ruby1.8
+Architecture: all
+Depends: ${misc:Depends}, libmerb-core-ruby1.8
+Suggests: libmerb-ruby-doc
+Description: Ruby 1.8 library to support merb-gen generator
+ These libraries are used by the merb-gen program to generate various components
+ for Merb applications and slices.
  .
  This package contains the merb-slices libraries for Ruby 1.8.
 

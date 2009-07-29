@@ -107,6 +107,22 @@ MERB_HELPERS_REMOVE_SETUP_CMD = \
     mv merb-helpers/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build merb-helpers/$(DEB_RUBY_SETUP_CMD) ; \
   fi
 
+MERB_GEN_INSTALL_SETUP_CMD = \
+  if [ ! -L merb-gen/$(DEB_RUBY_SETUP_CMD) ] ; then \
+    if [ -f merb-gen/$(DEB_RUBY_SETUP_CMD) ] ; then \
+      mv merb-gen/$(DEB_RUBY_SETUP_CMD) merb-gen/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ;\
+    fi ; \
+    ln -s $(PACKAGED_RUBY_SETUP_CMD) merb-gen/$(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
+MERB_GEN_REMOVE_SETUP_CMD = \
+  if [ -L merb-gen/$(DEB_RUBY_SETUP_CMD) ] ; then \
+    rm merb-gen/$(DEB_RUBY_SETUP_CMD) ; \
+  fi ; \
+  if [ -f merb-gen/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ] ; then \
+    mv merb-gen/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build merb-gen/$(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
 install/merb-core::
 	dh_installman debian/merb-core.1
 	dh_installchangelogs
@@ -114,6 +130,11 @@ install/merb-core::
 
 install/merb-slices::
 	dh_installman debian/slice.1
+	dh_installchangelogs
+	dh_installdirs
+
+install/merb-gen::
+	dh_installman debian/merb-gen.1
 	dh_installchangelogs
 	dh_installdirs
 
@@ -151,27 +172,33 @@ install/libmerb-helpers-ruby1.8::
 	(cd merb-helpers && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup)
 	(cd merb-helpers && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libmerb-helpers-ruby1.8)
 
+install/libmerb-gen-ruby1.8::
+	$(MERB_GEN_INSTALL_SETUP_CMD)
+	(cd merb-gen && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS))
+	(cd merb-gen && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup)
+	(cd merb-gen && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libmerb-gen-ruby1.8)
+
 install/libmerb-ruby-doc::
 	dh_rdoc -d merb-core
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
 	mv $(CURDIR)/debian/libmerb-core-ruby/usr/share/doc/libmerb-core-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
-	
 	dh_rdoc -d merb-haml
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
 	mv $(CURDIR)/debian/libmerb-haml-ruby/usr/share/doc/libmerb-haml-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
-	
 	dh_rdoc -d merb-helpers
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
 	mv $(CURDIR)/debian/libmerb-helpers-ruby/usr/share/doc/libmerb-helpers-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
-	
 	dh_rdoc -d merb-assets
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
 	mv $(CURDIR)/debian/libmerb-assets-ruby/usr/share/doc/libmerb-assets-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
-	
+	dh_rdoc -d merb-gen
+	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-gen-ruby
+	mv $(CURDIR)/debian/libmerb-gen-ruby/usr/share/doc/libmerb-gen-ruby/rdoc \
+	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-gen-ruby
 	dh_rdoc -d merb-slices
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
 	mv $(CURDIR)/debian/libmerb-slices-ruby/usr/share/doc/libmerb-slices-ruby/rdoc \
@@ -184,6 +211,7 @@ clean::
 	$(MERB_SLICES_INSTALL_SETUP_CMD)
 	$(MERB_ASSETS_INSTALL_SETUP_CMD)
 	$(MERB_HELPERS_INSTALL_SETUP_CMD)
+	$(MERB_GEN_INSTALL_SETUP_CMD)
 	/usr/bin/ruby $(DEB_RUBY_SETUP_CMD) distclean
 	$(DEB_RUBY_REMOVE_SETUP_CMD)
 	$(MERB_CORE_REMOVE_SETUP_CMD)
@@ -191,5 +219,6 @@ clean::
 	$(MERB_SLICES_REMOVE_SETUP_CMD)
 	$(MERB_ASSETS_REMOVE_SETUP_CMD)
 	$(MERB_HELPERS_REMOVE_SETUP_CMD)
+	$(MERB_GEN_REMOVE_SETUP_CMD)
 	rm -f $(DEB_SRCDIR)/.config
 	rm -f $(DEB_SRCDIR)/InstalledFiles
