@@ -9,7 +9,7 @@ Homepage: http://merbivore.com
 
 Package: merb-core
 Architecture: all
-Depends: ${misc:Depends}, ${shlibs:Depends}, libmerb-core-ruby1.8
+Depends: ${misc:Depends}, ${shlibs:Depends}, ruby1.8, libmerb-core-ruby1.8
 Suggests: libmerb-ruby-doc
 Description: Lightweight Ruby-based MVC framework for web development
  Ruby-based MVC framework that is agnostic to ORM, JavaScript library,
@@ -44,7 +44,7 @@ Package: libmerb-core-ruby1.8
 Architecture: all
 Depends: ${misc:Depends}, ruby1.8, libextlib-ruby (>=0.9.8), liberubis-ruby (>=2.6.2), rake, libjson-ruby, librack-ruby, libmime-types-ruby
 Suggests: libmerb-ruby-doc
-Description: Core libraries for the Merb MVC framework
+Description: Core Ruby 1.8 libraries for the Merb MVC framework
  Ruby-based MVC framework that is agnostic to ORM, JavaScript library,
  and template languages. Merb is plugin-based, so the core is small and
  well organized.
@@ -70,7 +70,7 @@ Package: libmerb-assets-ruby1.8
 Architecture: all
 Depends: ${misc:Depends}, libmerb-core-ruby1.8
 Suggests: libmerb-ruby-doc
-Description: Plugin library for Merb that provides helpers for assets
+Description: Ruby 1.8 plugin library for Merb that provides helpers for assets
  Provides extra functionality related to assets:
   * Assets bundling.
   * Assets hosts.
