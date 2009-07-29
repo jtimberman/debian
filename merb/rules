@@ -111,7 +111,10 @@ install/merb-core::
 	dh_installman debian/merb-core.1
 	dh_installchangelogs
 	dh_installdirs
-	rm $(CURDIR)/debian/merb-core/bin/merb-specs
+
+install/merb-slices::
+	dh_installchangelogs
+	dh_installdirs
 
 install/libmerb-core-ruby1.8::
 	$(MERB_CORE_INSTALL_SETUP_CMD)
@@ -132,6 +135,8 @@ install/libmerb-slices-ruby1.8::
 	(cd merb-slices && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS))
 	(cd merb-slices && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup)
 	(cd merb-slices && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libmerb-slices-ruby1.8)
+	mv $(CURDIR)/debian/libmerb-slices-ruby1.8/usr/bin/slice $(CURDIR)/debian/merb-slices/usr/bin/
+	rmdir $(CURDIR)/debian/libmerb-slices-ruby1.8/usr/bin/
 
 install/libmerb-assets-ruby1.8::
 	$(MERB_ASSETS_INSTALL_SETUP_CMD)
@@ -147,14 +152,29 @@ install/libmerb-helpers-ruby1.8::
 
 install/libmerb-ruby-doc::
 	dh_rdoc -d merb-core
+	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
+	mv $(CURDIR)/debian/libmerb-core-ruby/usr/share/doc/libmerb-core-ruby/rdoc \
+	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
+	
 	dh_rdoc -d merb-haml
-	dh_rdoc -d merb-slices
-	dh_rdoc -d merb-assets
+	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
+	mv $(CURDIR)/debian/libmerb-haml-ruby/usr/share/doc/libmerb-haml-ruby/rdoc \
+	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
+	
 	dh_rdoc -d merb-helpers
-
-install/merb-slices::
-	dh_installchangelogs
-	dh_installdirs
+	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
+	mv $(CURDIR)/debian/libmerb-helpers-ruby/usr/share/doc/libmerb-helpers-ruby/rdoc \
+	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
+	
+	dh_rdoc -d merb-assets
+	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
+	mv $(CURDIR)/debian/libmerb-assets-ruby/usr/share/doc/libmerb-assets-ruby/rdoc \
+	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
+	
+	dh_rdoc -d merb-slices
+	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
+	mv $(CURDIR)/debian/libmerb-slices-ruby/usr/share/doc/libmerb-slices-ruby/rdoc \
+	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
 
 clean::
 	$(DEB_RUBY_INSTALL_SETUP_CMD)
