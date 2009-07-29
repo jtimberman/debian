@@ -1,0 +1,24 @@
+diff --git a/merb-core/lib/merb-core/core_ext/kernel.rb b/merb-core/lib/merb-core/core_ext/kernel.rb
+index f5afea0..3ea9417 100644
+--- a/merb-core/lib/merb-core/core_ext/kernel.rb
++++ b/merb-core/lib/merb-core/core_ext/kernel.rb
+@@ -142,8 +142,17 @@ module Kernel
+       return unless dep.require_as
+       Gem.activate(dep)
+     rescue Gem::LoadError => e
+- e.set_backtrace dep.original_caller
+- Merb.fatal! "The gem #{name}, #{ver.inspect} was not found", e
++ begin
++ Merb.logger.debug "Falling back to a regular require"
++ if name.kind_of?(Gem::Dependency)
++ require name.name
++ else
++ require name
++ end
++ rescue LoadError => le
++ e.set_backtrace dep.original_caller
++ Merb.fatal! "The gem #{name}, #{ver.inspect} was not found and we could not require it"
++ end
+     end
+   
+     begin
