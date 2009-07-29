@@ -16,6 +16,8 @@ Description: Lightweight Ruby-based MVC framework for web development
  and template languages. Merb is plugin-based, so the core is small and
  well organized.
  .
+ The Merb packages provide just enough to run a basic Merb application.
+ .
  This package contains the merb binary and associated files.
 
 Package: merb-slices
@@ -26,6 +28,11 @@ Description: Merb plugin to modularize an application by creating 'slices'
  Usually these slices are reusable extractions from the main application.
  A module is set up to serve as a namespace for controller, models, helpers,
  etc.
+ .
+ Installing this package will provide the capability to run a Merb application
+ slice.
+ .
+ This package contains the slice binary and associated files.
 
 Package: libmerb-core-ruby
 Architecture: all
@@ -48,6 +55,9 @@ Description: Core Ruby 1.8 libraries for the Merb MVC framework
  Ruby-based MVC framework that is agnostic to ORM, JavaScript library,
  and template languages. Merb is plugin-based, so the core is small and
  well organized.
+ .
+ This package provides the core libraries that provide enough of Merb 
+ to run an application.
  .
  This package contains merb-core libraries for Ruby 1.8.
 
@@ -160,6 +170,9 @@ Description: Ruby 1.8 library to support merb-slices application modularization
  Usually these slices are reusable extractions from the main application.
  A module is set up to serve as a namespace for controller, models, helpers,
  etc.
+ .
+ Installing this package will provide the capability to run a Merb application
+ slice.
  .
  This package contains the merb-slices libraries for Ruby 1.8.
 
