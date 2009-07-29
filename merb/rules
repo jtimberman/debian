@@ -179,27 +179,27 @@ install/libmerb-gen-ruby1.8::
 	(cd merb-gen && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libmerb-gen-ruby1.8)
 
 install/libmerb-ruby-doc::
-	dh_rdoc -d merb-core
+	dh_rdoc -p merb-core
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
 	mv $(CURDIR)/debian/libmerb-core-ruby/usr/share/doc/libmerb-core-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-core-ruby
-	dh_rdoc -d merb-haml
+	dh_rdoc -p merb-haml
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
 	mv $(CURDIR)/debian/libmerb-haml-ruby/usr/share/doc/libmerb-haml-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-haml-ruby
-	dh_rdoc -d merb-helpers
+	dh_rdoc -p merb-helpers
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
 	mv $(CURDIR)/debian/libmerb-helpers-ruby/usr/share/doc/libmerb-helpers-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-helpers-ruby
-	dh_rdoc -d merb-assets
+	dh_rdoc -p merb-assets
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
 	mv $(CURDIR)/debian/libmerb-assets-ruby/usr/share/doc/libmerb-assets-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-assets-ruby
-	dh_rdoc -d merb-gen
+	dh_rdoc -p merb-gen
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-gen-ruby
 	mv $(CURDIR)/debian/libmerb-gen-ruby/usr/share/doc/libmerb-gen-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-gen-ruby
-	dh_rdoc -d merb-slices
+	dh_rdoc -p merb-slices
 	mkdir $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
 	mv $(CURDIR)/debian/libmerb-slices-ruby/usr/share/doc/libmerb-slices-ruby/rdoc \
 	  $(CURDIR)/debian/libmerb-ruby-doc/usr/share/doc/libmerb-ruby-doc/libmerb-slices-ruby
