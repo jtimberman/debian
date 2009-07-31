@@ -1,0 +1,35 @@
+This package was debianized by Joshua TImberman <joshua@opscode.com> 
+Thu, 30 Jul 2009 21:06:25 -0600
+
+It was downloaded from <http://github.com/opscode/chef>
+
+Developed at Opscode (http://www.opscode.com).
+
+Contributors and Copyright holders:
+
+ * Copyright 2008, Adam Jacob <adam@opscode.com>
+ * Copyright 2008, Arjuna Christensen <aj@hjksolutions.com>
+ * Copyright 2008, Bryan McLellan <btm@loftninjas.org>
+ * Copyright 2008, Ezra Zygmuntowicz <ezra@engineyard.com>
+ * Copyright 2009, Joshua Timberman <joshua@opscode.com>
+ * Copyright 2009, Sean Cribbs <seancribbs@gmail.com>
+ * Copyright 2009, Christopher Brown <cb@opscode.com>
+ * Copyright 2009, Thom May <thom@clearairturbulence.org>
+ * Copyright 2009, Joe Williams <joe@joetify.com>
+
+Chef incorporates code modified from Open4 (http://www.codeforpeople.com/lib/ruby/open4/), which was written by Ara T. Howard.
+
+Chef incorporates code modified from Merb (http://www.merbivore.com), which is Copyright (c) 2008 Engine Yard.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+

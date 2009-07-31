@@ -1,0 +1,5 @@
+chef (0.7.4-1) unstable; urgency=low
+
+   * Initial release (Closes: #529392)
+
+ -- Joshua TImberman <joshua@opscode.com> Thu, 30 Jul 2009 21:06:25 -0600
