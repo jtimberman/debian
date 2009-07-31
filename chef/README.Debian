@@ -4,8 +4,8 @@ chef packages for Debian
 While Chef is in production use at several companies managing a variety 
 of infrastructure types and sizes, it is still a young product (7 months old as
 of this writing) and under active development. Please see the Chef Wiki for
-information on components that may be changed, or find out how you can help
-make it better.
+information on components that may be changed, or find out how you can 
+improve Chef by contributing.
 
 Chef is normally distributed as a RubyGem, and gets its dependencies through
 RubyGems. These packages are independent of RubyGems. All dependencies are 
