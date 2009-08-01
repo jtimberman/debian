@@ -10,6 +10,7 @@ Homepage: http://wiki.opscode.com/display/chef/Home
 Package: chef
 Architecture: all
 Depends: ${misc:Depends}, ${shlibs:Depends}, ruby1.8, libmixlib-ruby, libmixlib-cli-ruby, libmixlib-config-ruby, libmixlib-log-ruby, libopenid-ruby, liberubis-ruby, libjson-ruby, libextlib-ruby, libstomp-ruby, libohai-ruby 
+Recommends: rake
 Description: configuration management system written in Ruby
  Chef is a systems integration framework and configuration management system
  written in Ruby. Chef provides a Ruby library and API that can be used to
