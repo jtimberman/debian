@@ -1,0 +1,11 @@
+libsyntax-ruby (1.0.0-2) unstable; urgency=low
+
+  * Corrected section, description in control file.
+
+ -- Joshua Timberman <joshua@opscode.com>  Mon, 27 Jul 2009 15:10:01 -0600
+
+libsyntax-ruby (1.0.0-1) unstable; urgency=low
+
+  * Initial release. Closes: #538353
+
+ -- Joshua Timberman <joshua@opscode.com>  Wed, 22 Jul 2009 16:52:01 -0600

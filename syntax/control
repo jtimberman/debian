@@ -1,0 +1,34 @@
+Source: libsyntax-ruby
+Section: ruby
+Priority: optional
+Maintainer: Joshua Timberman <joshua@opscode.com>
+Uploaders: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Build-Depends: cdbs, ruby-pkg-tools (>= 0.8), debhelper (>= 7)
+Build-Depends-Indep: ruby1.8
+Standards-Version: 3.8.2
+Homepage: http://syntax.rubyforge.org/
+
+Package: libsyntax-ruby
+Architecture: all
+Depends: ${misc:Depends}, libsyntax-ruby1.8
+Description: Ruby library for lexical analysis for syntax highlighting
+ Syntax is, first and foremost, a lexical analysis framework. 
+ It supports pluggable syntax modules, and comes with modules for Ruby, XML,
+ and YAML.
+ .
+ This package is part of the Ruby library extras, a supplement to Ruby's
+ standard library.
+ .
+ This is a dummy package depending on the library for the current default
+ version of Ruby.
+
+Package: libsyntax-ruby1.8
+Architecture: all
+Depends: ${misc:Depends}, ruby
+Description: Ruby 1.8 library for lexical analysis for syntax highlighting
+ Syntax is, first and foremost, a lexical analysis framework. 
+ It supports pluggable syntax modules, and comes with modules for Ruby, XML,
+ and YAML.
+ .
+ This package is part of the Ruby library extras, a supplement to Ruby's
+ standard library for version 1.8.
