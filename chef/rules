@@ -1,5 +1,45 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+#include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 include /usr/share/ruby-pkg-tools/1/class/ruby-common.mk
+
+CDBS_NO_DOC_SYMLINKING = ""
+
+PACKAGED_RUBY_SETUP_CMD = /usr/lib/ruby/1.8/setup.rb
+DEB_RUBY_SETUP_CMD = debian-setup.rb
+DEB_RUBY_CONFIG_ARGS = --installdirs=std
+
+CHEF_INSTALL_SETUP_CMD = \
+  if [ ! -L chef/$(DEB_RUBY_SETUP_CMD) ] ; then \
+    if [ -f chef/$(DEB_RUBY_SETUP_CMD) ] ; then \
+      mv chef/$(DEB_RUBY_SETUP_CMD) chef/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ;\
+    fi ; \
+    ln -s $(PACKAGED_RUBY_SETUP_CMD) chef/$(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
+CHEF_REMOVE_SETUP_CMD = \
+  if [ -L chef/$(DEB_RUBY_SETUP_CMD) ] ; then \
+    rm chef/$(DEB_RUBY_SETUP_CMD) ; \
+  fi ; \
+  if [ -f chef/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ] ; then \
+    mv chef/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build chef/$(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
+install/chef::
+	dh_installchangelogs
+	dh_installdirs
+
+install/libchef-ruby1.8::
+	$(CHEF_INSTALL_SETUP_CMD)
+	(cd chef && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS))
+	(cd chef && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup)
+	(cd chef && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libchef-ruby1.8)
+	mv $(CURDIR)/debian/libchef-ruby1.8/usr/bin/chef-client $(CURDIR)/debian/chef/usr/bin/
+	mv $(CURDIR)/debian/libchef-ruby1.8/usr/bin/chef-solo $(CURDIR)/debian/chef/usr/bin/
+	rmdir $(CURDIR)/debian/libchef-ruby1.8/usr/bin/
+
+clean::
+	$(CHEF_REMOVE_SETUP_CMD)
+	rm -f $(DEB_SRCDIR)/.config
+	rm -f $(DEB_SRCDIR)/InstalledFiles

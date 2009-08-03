@@ -1,0 +1,3 @@
+etc/chef/server.rb
+etc/chef/indexer.rb
+etc/init.d/chef-indexer.rb

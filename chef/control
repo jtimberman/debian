@@ -19,7 +19,8 @@ Description: configuration management system written in Ruby
  Chef can be run as a client (chef-client) to a server, or run as a standalone
  tool (chef-solo). Configuration recipes are written in a pure Ruby DSL.
  .
- This package contains the chef-client and chef-solo binaries and associated files.
+ This package contains the chef-client and chef-solo binaries and associated 
+ files.
 
 Package: chef-server
 Architecture: all
@@ -40,7 +41,7 @@ Description: Merb application providing centralized management for Chef
 
 Package: chef-server-slice
 Architecture: all
-Depends: ${misc:Depends}, ruby1.8, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, chef, chef-server-slice, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby
+Depends: ${misc:Depends}, ruby1.8, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, chef, chef-server, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby
 Description: Merb app slice providing centralized management for Chef
  Chef is a systems integration framework and configuration management system
  written in Ruby. Chef provides a Ruby library and API that can be used to
@@ -73,7 +74,7 @@ Description: Ruby libraries for Chef configuration management system
 Package: libchef-ruby1.8
 Architecture: all
 Depends: ${misc:Depends}, ruby1.8
-Description: Ruby libraries for Chef configuration management system
+Description: Ruby 1.8 libraries for Chef configuration management system
  Chef is a systems integration framework and configuration management system
  written in Ruby. Chef provides a Ruby library and API that can be used to
  bring the benefits of configuration management to an entire infrastructure.
