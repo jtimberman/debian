@@ -16,6 +16,12 @@
 # Third, Ruby class methods can be used, for example we tell the log to show
 # the current time stamp with Chef::Log::Formatter.show_time, below.
 #
+# log_location specifies where the indexer should log to.
+# valid values are: a quoted string specifying a file, or STDOUT with
+# no quotes. When run as a daemon (default), STDOUT will produce no output.
+
+log_location       "/var/log/chef/indexer.log"
+
 # search_index_path specifies where the indexer should store the indexes.
 # valid value is any filesystem directory location.
 

@@ -1,9 +1,6 @@
-var/cache/chef
-var/lib/chef/openid
 var/lib/chef/search_index
 var/log/chef
 var/run
 usr/bin
-usr/share/chef
 etc/chef
 etc/init.d

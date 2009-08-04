@@ -3,8 +3,9 @@ var/lib/chef/cookbooks
 var/lib/chef/openid
 var/lib/chef/openid/store
 var/lib/chef/openid/cstore
-var/lib/chef/search_index
 var/log/chef
 var/run
+usr/bin
 usr/share/chef-server
 etc/chef
+etc/init.d

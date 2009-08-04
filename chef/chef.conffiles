@@ -1,3 +1,0 @@
-etc/chef/client.rb
-etc/chef/solo.rb
-etc/init.d/chef-client

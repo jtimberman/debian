@@ -27,6 +27,9 @@ CHEF_REMOVE_SETUP_CMD = \
   fi
 
 install/chef::
+	dh_installinit --name chef-client 
+	cp -rf $(CURDIR)/debian/etc/chef/client.rb $(CURDIR)/debian/chef/etc/chef
+	cp -rf $(CURDIR)/debian/etc/chef/solo.rb $(CURDIR)/debian/chef/etc/chef
 	dh_installchangelogs
 	dh_installdirs
 
@@ -38,6 +41,31 @@ install/libchef-ruby1.8::
 	mv $(CURDIR)/debian/libchef-ruby1.8/usr/bin/chef-client $(CURDIR)/debian/chef/usr/bin/
 	mv $(CURDIR)/debian/libchef-ruby1.8/usr/bin/chef-solo $(CURDIR)/debian/chef/usr/bin/
 	rmdir $(CURDIR)/debian/libchef-ruby1.8/usr/bin/
+
+install/chef-indexer::
+	dh_installchangelogs
+	dh_installdirs
+	cp debian/etc/chef/indexer.rb debian/chef-indexer/etc/chef
+	cp chef-server/bin/chef-indexer debian/chef-indexer/usr/bin
+
+install/chef-server::
+	cp debian/etc/chef/server.rb  debian/chef-server/etc/chef
+	cp chef-server/bin/chef-server  debian/chef-server/usr/bin
+	cp chef-server/README.rdoc debian/chef-server/usr/share/doc/chef-server
+	cp chef-server/config.ru debian/chef-server/usr/share/chef-server
+	cp -a chef-server/app    debian/chef-server/usr/share/chef-server
+	cp -a chef-server/config debian/chef-server/usr/share/chef-server
+	cp -a chef-server/lib    debian/chef-server/usr/share/chef-server
+	cp -a chef-server/public debian/chef-server/usr/share/chef-server
+
+install/chef-server-slice::
+	cp chef-server-slice/README.rdoc debian/chef-server/usr/share/doc/chef-server-slice
+	cp -a chef-server-slice/app    debian/chef-server-slice/usr/share/chef-server
+	cp -a chef-server-slice/config debian/chef-server-slice/usr/share/chef-server
+	cp -a chef-server-slice/lib    debian/chef-server-slice/usr/share/chef-server
+	cp -a chef-server-slice/public debian/chef-server-slice/usr/share/chef-server
+	dh_installchangelogs
+	dh_installdirs
 
 clean::
 	$(CHEF_REMOVE_SETUP_CMD)
