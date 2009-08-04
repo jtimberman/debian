@@ -1,0 +1,58 @@
+chef-server for Debian
+----------------------
+
+There are a number of ways to set up the chef-server. The default on Debian is
+to use Passenger (mod_rack) under Apache2.
+
+Here are the steps you'll need to take to finish setting up the chef-server
+merb application on your local system. (# denotes a root prompt, use sudo
+if appropriate for your system.)
+
+1. The package installation will generate a self-signed SSL certificate so
+the chef-server can be accessed via HTTPS. If you would like to use a 
+different certificate, you can copy the .pem file to /etc/chef/certificates.
+
+Make note of the filename, we'll need it shortly.
+
+2. Edit /etc/chef/apache.conf.
+
+	# vi /etc/chef/apache.conf
+
+3. Modify the line ServerName to match your system's fully qualified
+domain name (FQDN). To get the FQDN:
+
+	$ hostname -f
+	localhost.localdomain
+
+Your hostname may vary. This needs to be changed in both 
+VirtualHosts (*:443, *:444).
+
+4. Update the directives SSLCertificateFile, SSLCertificateKeyFile. If
+you're using the generated SSL certificate, this will be named after the
+FQDN, so using the above example:
+	
+  "/etc/chef/certificates/localhost.localdomain.pem"
+
+If you're using a different certificate, you'll need to change the values
+to match.
+
+5. Restart the Apache web server for the changes to take effect.
+
+  /etc/init.d/apache2 restart
+
+Additional Resources
+--------------------
+
+The official documentation for Chef is on the Opscode wiki:
+
+  http://wiki.opscode.com/display/chef/Home
+
+Opscode also hosts mailing lists:
+
+  http://lists.opscode.com/
+
+And there's an IRC channel on Freenode:
+
+  irc://irc.freenode.net/chef
+
+ -- Joshua Timberman <joshua@opscode.com>  Mon, 03 Aug 2009 22:14:03 -0600

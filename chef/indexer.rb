@@ -31,7 +31,7 @@ search_index_path    "/var/lib/chef/search_index"
 # pid file.
 # valid value is any filesystem file location.
 
-pid_file           "/var/run/chef-client.pid"
+pid_file           "/var/run/chef-indexer.pid"
 
 # Chef::Log::Formatter.show_time specifies whether the chef-client log should
 # contain timestamps. 

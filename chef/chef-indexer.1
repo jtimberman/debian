@@ -7,6 +7,7 @@ chef-indexer: \- Runs the search index process.
 \fI(options)\fR
 .SH DESCRIPTION
 .TP
+chef-indexer requires that the stompserver be started but at this time the stompserver package does not install a startup script, let alone start the daemon. I am working with the package maintainer for stompserver to include a startup script.
 \fB\-c\fR, \fB\-\-config\fR CONFIG
 The configuration file to use
 .TP

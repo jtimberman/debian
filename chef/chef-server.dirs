@@ -4,8 +4,7 @@ var/lib/chef/openid
 var/lib/chef/openid/store
 var/lib/chef/openid/cstore
 var/log/chef
-var/run
 usr/bin
-usr/share/chef-server
+usr/share/doc/chef-server
 etc/chef
-etc/init.d
+etc/chef/certificates

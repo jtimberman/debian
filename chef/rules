@@ -50,6 +50,7 @@ install/chef-indexer::
 
 install/chef-server::
 	cp debian/etc/chef/server.rb  debian/chef-server/etc/chef
+	cp debian/etc/chef/apache.conf  debian/chef-server/etc/chef
 	cp chef-server/bin/chef-server  debian/chef-server/usr/bin
 	cp chef-server/README.rdoc debian/chef-server/usr/share/doc/chef-server
 	cp chef-server/config.ru debian/chef-server/usr/share/chef-server
@@ -59,11 +60,13 @@ install/chef-server::
 	cp -a chef-server/public debian/chef-server/usr/share/chef-server
 
 install/chef-server-slice::
-	cp chef-server-slice/README.rdoc debian/chef-server/usr/share/doc/chef-server-slice
-	cp -a chef-server-slice/app    debian/chef-server-slice/usr/share/chef-server
-	cp -a chef-server-slice/config debian/chef-server-slice/usr/share/chef-server
-	cp -a chef-server-slice/lib    debian/chef-server-slice/usr/share/chef-server
-	cp -a chef-server-slice/public debian/chef-server-slice/usr/share/chef-server
+	cp chef-server-slice/README.rdoc debian/chef-server-slice/usr/share/doc/chef-server-slice
+	cp -a chef-server-slice/app    debian/chef-server-slice/usr/share/chef-server-slice
+	cp -a chef-server-slice/config debian/chef-server-slice/usr/share/chef-server-slice
+	cp -a chef-server-slice/lib    debian/chef-server-slice/usr/share/chef-server-slice
+	cp -a chef-server-slice/public debian/chef-server-slice/usr/share/chef-server-slice
+	rm debian/chef-server-slice/usr/share/doc/chef-server-slice/public/images/treeBuilderImages/Thumbs.db
+	find debian/chef-server-slice -type f -perm +755 -exec chmod 644 {} \;
 	dh_installchangelogs
 	dh_installdirs
 

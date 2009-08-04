@@ -31,8 +31,19 @@ server is a Merb application slice, and by default this is set up to run under
 Apache as Passenger application. Chef server uses CouchDB to store node attribute 
 data.
 
-The definitive source of documentation for Chef is the Wiki.
+Additional Resources
+--------------------
+
+The official documentation for Chef is on the Opscode wiki:
 
   http://wiki.opscode.com/display/chef/Home
 
- -- Joshua Timberman <joshua@opscode.com>  Mon, 27 Jul 2009 23:38:37 -0600
+Opscode also hosts mailing lists:
+
+  http://lists.opscode.com/
+
+And there's an IRC channel on Freenode:
+
+  irc://irc.freenode.net/chef
+
+ -- Joshua Timberman <joshua@opscode.com>  Mon, 03 Aug 2009 22:14:03 -0600

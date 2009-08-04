@@ -3,6 +3,4 @@ var/lib/chef/cookbooks
 var/lib/chef/openid
 var/lib/chef/search_index
 var/log/chef
-var/run
-usr/share/chef-server-slice
-etc/chef
+usr/share/doc/chef-server-slice
