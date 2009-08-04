@@ -17,11 +17,13 @@ DAEMON=/usr/bin/stompserver
 NAME=stompserver
 DESC=stompserver
 LOGDIR=/var/log/stomp
-PIDFILE=/var/run/$NAME.pid
+PIDFILE=/var/lib/stompserver/log/$NAME.pid
 
 test -x $DAEMON || exit 0
 
 . /lib/lsb/init-functions
+
+DAEMON_OPTS="-C /etc/stompserver.conf"
 
 running_pid() {                                                                 
   pid=$1

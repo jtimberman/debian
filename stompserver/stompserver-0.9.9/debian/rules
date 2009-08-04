@@ -8,4 +8,6 @@ DEB_INSTALL_CHANGELOGS_ALL = History.txt
 
 binary-install/stompserver::
 	dh_rdoc -pstompserver
+	dh_installinit -pstompserver
+	install -Dp -m0644 debian/stompserver.conf debian/stompserver/etc/stompserver.conf
 
