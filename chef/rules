@@ -26,6 +26,22 @@ CHEF_REMOVE_SETUP_CMD = \
     mv chef/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build chef/$(DEB_RUBY_SETUP_CMD) ; \
   fi
 
+CHEF_SERVER_SLICE_INSTALL_SETUP_CMD = \
+  if [ ! -L chef-server-slice/$(DEB_RUBY_SETUP_CMD) ] ; then \
+    if [ -f chef-server-slice/$(DEB_RUBY_SETUP_CMD) ] ; then \
+      mv chef-server-slice/$(DEB_RUBY_SETUP_CMD) chef-server-slice/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ;\
+    fi ; \
+    ln -s $(PACKAGED_RUBY_SETUP_CMD) chef-server-slice/$(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
+CHEF_SERVER_SLICE_REMOVE_SETUP_CMD = \
+  if [ -L chef-server-slice/$(DEB_RUBY_SETUP_CMD) ] ; then \
+    rm chef-server-slice/$(DEB_RUBY_SETUP_CMD) ; \
+  fi ; \
+  if [ -f chef-server-slice/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build ] ; then \
+    mv chef-server-slice/$(DEB_RUBY_SETUP_CMD).moved_away_by_debian_build chef-server-slice/$(DEB_RUBY_SETUP_CMD) ; \
+  fi
+
 install/chef::
 	dh_installinit --name chef-client 
 	cp -rf $(CURDIR)/debian/etc/chef/client.rb $(CURDIR)/debian/chef/etc/chef
@@ -63,14 +79,22 @@ install/chef-server-slice::
 	cp chef-server-slice/README.rdoc debian/chef-server-slice/usr/share/doc/chef-server-slice
 	cp -a chef-server-slice/app    debian/chef-server-slice/usr/share/chef-server-slice
 	cp -a chef-server-slice/config debian/chef-server-slice/usr/share/chef-server-slice
-	cp -a chef-server-slice/lib    debian/chef-server-slice/usr/share/chef-server-slice
 	cp -a chef-server-slice/public debian/chef-server-slice/usr/share/chef-server-slice
-	rm debian/chef-server-slice/usr/share/doc/chef-server-slice/public/images/treeBuilderImages/Thumbs.db
+	rm debian/chef-server-slice/usr/share/chef-server-slice/public/images/treeBuilderImages/Thumbs.db
 	find debian/chef-server-slice -type f -perm +755 -exec chmod 644 {} \;
 	dh_installchangelogs
 	dh_installdirs
 
+install/libchef-server-slice-ruby1.8::
+	$(CHEF_SERVER_SLICE_INSTALL_SETUP_CMD)
+	(cd chef-server-slice && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS))
+	(cd chef-server-slice && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup)
+	(cd chef-server-slice && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libchef-server-slice-ruby1.8)
+	rm debian/libchef-server-slice-ruby1.8/usr/bin/chef-server
+	rmdir debian/libchef-server-slice-ruby1.8/usr/bin
+
 clean::
 	$(CHEF_REMOVE_SETUP_CMD)
+	$(CHEF_SERVER_SLICE_REMOVE_SETUP_CMD)
 	rm -f $(DEB_SRCDIR)/.config
 	rm -f $(DEB_SRCDIR)/InstalledFiles

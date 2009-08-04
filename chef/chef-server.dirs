@@ -6,5 +6,6 @@ var/lib/chef/openid/cstore
 var/log/chef
 usr/bin
 usr/share/doc/chef-server
+usr/share/chef-server
 etc/chef
 etc/chef/certificates

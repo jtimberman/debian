@@ -32,7 +32,7 @@ Description: Creates search indexes of Chef node attributes
 
 Package: chef-server
 Architecture: all
-Depends: ${misc:Depends}, ruby, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, chef-server-slice, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby, chef-indexer, httpd
+Depends: ${misc:Depends}, ruby, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, chef-server-slice, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby, chef-indexer, apache2
 Description: Merb application providing centralized management for Chef
  Chef is a systems integration framework and configuration management system
  written in Ruby. Chef provides a Ruby library and API that can be used to
@@ -49,7 +49,7 @@ Description: Merb application providing centralized management for Chef
 
 Package: chef-server-slice
 Architecture: all
-Depends: ${misc:Depends}, ruby, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby, libchef-ruby
+Depends: ${misc:Depends}, ruby, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby, libchef-ruby, libchef-server-slice-ruby
 Description: Merb app slice providing centralized management for Chef
  Chef is a systems integration framework and configuration management system
  written in Ruby. Chef provides a Ruby library and API that can be used to
@@ -63,6 +63,39 @@ Description: Merb app slice providing centralized management for Chef
  started with the chef-server program.
  .
  This package contains the Merb slice for the chef-server.
+
+Package: libchef-server-slice-ruby
+Architecture: all
+Depends: ${misc:Depends}, ruby, libchef-server-slice-ruby1.8
+Description: Ruby libraries for Chef Server merb application slice
+ Chef is a systems integration framework and configuration management system
+ written in Ruby. Chef provides a Ruby library and API that can be used to
+ bring the benefits of configuration management to an entire infrastructure.
+ .
+ The Chef Server is a Merb application that provides centralized storage and
+ distribution for recipes stored in "cookbooks," management and authentication
+ of client nodes and node data, and search indexes for that data.
+ .
+ This package is a dependency package, which depends on the package
+ containing actual chef server slice libraries for the default Ruby version
+ (currently 1.8).
+
+Package: libchef-server-slice-ruby1.8
+Architecture: all
+Depends: ${misc:Depends}, ruby, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby, libchef-ruby
+Description: Merb app slice providing centralized management for Chef
+ Chef is a systems integration framework and configuration management system
+ written in Ruby. Chef provides a Ruby library and API that can be used to
+ bring the benefits of configuration management to an entire infrastructure.
+ .
+ The Chef Server is a Merb application that provides centralized storage and
+ distribution for recipes stored in "cookbooks," management and authentication
+ of client nodes and node data, and search indexes for that data.
+ .
+ The chef-server-slice package contains all the goods for the Chef Server and is
+ started with the chef-server program.
+ .
+ This package contains chef server slice libraries for Ruby 1.8.
 
 Package: libchef-ruby
 Architecture: all
