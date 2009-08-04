@@ -1,3 +1,9 @@
+libmixlib-cli-ruby (1.0.4-3) unstable; urgency=low
+
+  * watch via githubredir
+
+ -- Joshua Timberman <joshua@opscode.com>  Tue, 04 Aug 2009 13:32:21 -0600
+
 libmixlib-cli-ruby (1.0.4-2) unstable; urgency=low
 
   * Move ruby-pkg-tools to build-depends

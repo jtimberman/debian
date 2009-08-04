@@ -1,3 +1,3 @@
 # Compulsory line, this is a version 3 file
 version=3
-http://gems.opscode.com/gems/mixlib-log-(.*)\.gem
+http://githubredir.debian.net/github/opscode/mixlib-log /(.*).tar.gz

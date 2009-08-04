@@ -1,3 +1,9 @@
+libmixlib-log-ruby (1.0.3-3) unstable; urgency=low
+
+  * watch via githubredir
+
+ -- Joshua Timberman <joshua@opscode.com>  Tue, 04 Aug 2009 13:32:21 -0600
+
 libmixlib-log-ruby (1.0.3-2) unstable; urgency=low
 
   * Bump standards version to 3.8.2
