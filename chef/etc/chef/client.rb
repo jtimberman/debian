@@ -24,7 +24,7 @@ log_level          :info
 
 # log_location specifies where the client should log to.
 # valid values are: a quoted string specifying a file, or STDOUT with
-# no quotes. When run as a daemon (default), this will produce no output.
+# no quotes. When run as a daemon (default), STDOUT will produce no output.
 
 log_location       "/var/log/chef/client.log"
 
@@ -84,7 +84,7 @@ file_cache_path    "/var/cache/chef"
 # file.
 # valid value is any filesystem file location.
 
-pid_file           "/var/run/chef-client.pid"
+pid_file           "/var/run/chef/client.pid"
 
 # Chef::Log::Formatter.show_time specifies whether the chef-client log should
 # contain timestamps. 

@@ -39,7 +39,7 @@ ssl_verify_mode    :verify_none
 # registration_url specifies the URL which clients retrieve to register.
 # valid values are any HTTP URL.
 
-registration_url   "https://localhost"
+registration_url   "https://localhost:4000"
 
 # openid_url specifies the URL where the server's OpenID relay is listening.
 # valid values are any HTTP URL. The default server configuration is set to
@@ -49,29 +49,29 @@ registration_url   "https://localhost"
 # pre-shared key authentication and authorization architecture in a future 
 # release of Chef. This is currently scheduled for version 0.8.0.
 
-openid_url         "https://localhost:444"
+openid_url         "https://localhost:4001"
 
 # template_url specifies the URL where clients should retrieve templates.
 # valid values are any HTTP URL.
 
-template_url       "https://localhost"
+template_url       "https://localhost:4000"
 
 # remotefile_url specifies the URL where clients should retrieve remote 
 # static file and directory contents.
 # valid values are any HTTP URL.
 
-remotefile_url     "https://localhost"
+remotefile_url     "https://localhost:4000"
 
 # search_url specifies the URL where the client should send queries for search
 # indexes.
 # valid values are any HTTP URL.
 
-search_url         "https://localhost"
+search_url         "https://localhost:4000"
 
 # role_url specifies the URL where the client should look for role data.
 # valid values are any HTTP URL.
 
-role_url           "https://localhost"
+role_url           "https://localhost:4000"
 
 # file_cache_path specifies where the client should cache cookbooks, server
 # cookie ID, and openid registration data.

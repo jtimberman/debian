@@ -4,3 +4,4 @@ var/lib/chef/openid
 var/lib/chef/search_index
 var/log/chef
 usr/share/doc/chef-server-slice
+usr/share/chef-server-slice/app
