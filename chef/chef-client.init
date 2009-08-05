@@ -20,11 +20,15 @@ NAME=chef-client
 DESC=chef-client
 LOGDIR=/var/log/chef
 CONFIG=/etc/chef/client.rb
-PIDFILE=/var/run/$NAME.pid
+PIDFILE=/var/run/chef/client.pid
 
 test -x $DAEMON || exit 0
 
 . /lib/lsb/init-functions
+
+if [ ! -d /var/run/chef ]; then
+  mkdir /var/run/chef
+fi
 
 DAEMON_OPTS="-d -c $CONFIG -i 1800 -s 20"
 

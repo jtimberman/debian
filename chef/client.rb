@@ -84,7 +84,7 @@ file_cache_path    "/var/cache/chef"
 # file.
 # valid value is any filesystem file location.
 
-pid_file           "/var/run/chef-client.pid"
+pid_file           "/var/run/chef/client.pid"
 
 # Chef::Log::Formatter.show_time specifies whether the chef-client log should
 # contain timestamps. 
