@@ -1,3 +1,6 @@
+# Because we're not using the typical rubygems method of running Chef, the 
+# slice needs to manually load its root directory and the location of
+# controllers and views.
 Index: chef-0.7.4/chef-server-slice/lib/chef-server-slice.rb
 ===================================================================
 --- chef-0.7.4.orig/chef-server-slice/lib/chef-server-slice.rb	2009-08-06 00:25:23.000000000 -0600

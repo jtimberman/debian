@@ -1,3 +1,5 @@
+# Remove rubygems from the various bits of chef.
+# Also set up chef-server program to load slice correctly due to no rubygems.
 Index: chef-0.7.4/chef-server/bin/chef-indexer
 ===================================================================
 --- chef-0.7.4.orig/chef-server/bin/chef-indexer	2009-08-05 15:52:22.000000000 -0600
