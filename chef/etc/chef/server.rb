@@ -1,7 +1,17 @@
 # Configuration File For Chef (chef-server)
 # 
-# chef-server is a Merb application slice. By default on Debian, it is 
-# configured to run as a mod_rack Passenger application under Apache.
+# chef-server is a Merb application slice. By default it is configured to
+# run via Mongrel, the default Merb adapter. This should be run as:
+#
+#		chef-server -c2 
+#
+#	Which specifies two workers, so that chef-server has a worker to handle
+# OpenID requests. The two processes will be listening on port 4000 and 4001,
+# see the URL settings below.
+#
+# For details on how to set up the chef-server with a web front end proxy 
+# (nginx, apache, etc) or as an application under Passenger, see the Chef 
+# Wiki, under Additional Resources.
 #
 # This file configures the behavior of the running server itself.
 #
@@ -24,8 +34,7 @@ log_level          :info
 # log_location specifies where the server should log to.
 # valid values are: a quoted string specifying a file, or STDOUT with
 # no quotes. This is the application log for the Merb workers that get
-# spawned by Passenger. Apache and Passenger will log to the files specified
-# in the vhost.
+# spawned.
 
 log_location       "/var/log/chef/server.log"
 
@@ -36,42 +45,45 @@ log_location       "/var/log/chef/server.log"
 
 ssl_verify_mode    :verify_none
 
+# The next few settings specify the URL where chef-server should respond
+# for various components. 
+#
 # registration_url specifies the URL which clients retrieve to register.
 # valid values are any HTTP URL.
 
-registration_url   "https://localhost:4000"
+registration_url   "http://localhost:4000"
 
 # openid_url specifies the URL where the server's OpenID relay is listening.
-# valid values are any HTTP URL. The default server configuration is set to
-# use a vhost running on port 444 for this.
+# valid values are any HTTP URL. This should be one port higher than the other
+# URLs.
 #
 # NOTE: The client/server openid communication will be removed in favor of a
 # pre-shared key authentication and authorization architecture in a future 
 # release of Chef. This is currently scheduled for version 0.8.0.
 
-openid_url         "https://localhost:4001"
+openid_url         "http://localhost:4001"
 
 # template_url specifies the URL where clients should retrieve templates.
 # valid values are any HTTP URL.
 
-template_url       "https://localhost:4000"
+template_url       "http://localhost:4000"
 
 # remotefile_url specifies the URL where clients should retrieve remote 
 # static file and directory contents.
 # valid values are any HTTP URL.
 
-remotefile_url     "https://localhost:4000"
+remotefile_url     "http://localhost:4000"
 
 # search_url specifies the URL where the client should send queries for search
 # indexes.
 # valid values are any HTTP URL.
 
-search_url         "https://localhost:4000"
+search_url         "http://localhost:4000"
 
 # role_url specifies the URL where the client should look for role data.
 # valid values are any HTTP URL.
 
-role_url           "https://localhost:4000"
+role_url           "http://localhost:4000"
 
 # file_cache_path specifies where the client should cache cookbooks, server
 # cookie ID, and openid registration data.

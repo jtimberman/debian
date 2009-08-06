@@ -7,7 +7,7 @@ chef-server \- Start the Chef Server merb application slice.
 [\fIuGdcIpPhmailLerkKX\fR] [\fIargument\fR]
 .SH DESCRIPTION
 The Chef Server is a Merb application slice. Both chef-server and chef-server-slice packages should be installed. This man page was generated for merb and generated for chef-server.
-If no flags are given, Chef Server starts in the foreground on port 4000.
+The default listen port is 4000. At a minimum, chef-server should be started with \-c2 so one process starts for the webui (4000) and one process starts for openid (4001).
 .TP
 \fB\-u\fR, \fB\-\-user\fR USER
 This flag is for having chef-server run as a user other than the one currently logged in. Note: if you set this you must also provide a \fB\-\-group\fR option for it to take effect.

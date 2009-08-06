@@ -74,7 +74,6 @@ install/chef-indexer::
 
 install/chef-server::
 	cp debian/etc/chef/server.rb  debian/chef-server/etc/chef
-	cp debian/etc/chef/apache.conf  debian/chef-server/etc/chef
 	cp chef-server/bin/chef-server  debian/chef-server/usr/bin
 	cp chef-server/README.rdoc debian/chef-server/usr/share/doc/chef-server
 	cp chef-server/config.ru debian/chef-server/usr/share/chef-server
