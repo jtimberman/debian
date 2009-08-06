@@ -1,0 +1,15 @@
+Index: chef-0.7.4/chef-server-slice/lib/chef-server-slice.rb
+===================================================================
+--- chef-0.7.4.orig/chef-server-slice/lib/chef-server-slice.rb	2009-08-06 00:25:23.000000000 -0600
++++ chef-0.7.4/chef-server-slice/lib/chef-server-slice.rb	2009-08-06 00:26:19.000000000 -0600
+@@ -33,6 +33,10 @@
+     # Stub classes loaded hook - runs before LoadClasses BootLoader
+     # right after a slice's classes have been loaded internally.
+     def self.loaded
++      ChefServerSlice.root = "/usr/share/chef-server-slice"
++      Merb.push_path(:controller, ChefServerSlice.root / "app" / "controllers", "**/*.rb")
++      Merb.push_path(:views,      ChefServerSlice.root / "app" / "views", "**/*.rb")
++
+       Chef::Queue.connect
+ 
+       # create the couch databases for openid association and nonce storage, if configured
