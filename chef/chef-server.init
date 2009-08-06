@@ -91,7 +91,7 @@ case "$1" in
       exit 0
     fi
     ;;
-  restart)
+  restart|force-reload)
     log_daemon_msg "Restarting $DESC"
     errcode=0
     reload_server
