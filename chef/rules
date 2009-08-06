@@ -66,12 +66,10 @@ install/chef-server-slice::
 	cp -rf chef-server-slice/lib debian/chef-server-slice/usr/share/chef-server-slice
 	rm debian/chef-server-slice/usr/share/chef-server-slice/public/images/treeBuilderImages/Thumbs.db
 	find debian/chef-server-slice -type f -perm +755 -exec chmod 644 {} \;
-	mkdir debian/chef-server-slice/usr/share/chef-server-slice/lib
 	dh_installchangelogs
 	dh_installdirs
 
 clean::
 	$(CHEF_REMOVE_SETUP_CMD)
-	$(CHEF_SERVER_SLICE_REMOVE_SETUP_CMD)
 	rm -f $(DEB_SRCDIR)/.config
 	rm -f $(DEB_SRCDIR)/InstalledFiles
