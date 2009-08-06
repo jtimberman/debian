@@ -28,7 +28,7 @@ Index: chef-0.7.4/chef-server/bin/chef-server
 -  require library if File.exists?(library)
 -end
 +require "chef"
-+require "chef-server-slice"
++require "/usr/share/chef-server-slice/lib/chef-server-slice"
 +require "openid/util"
  
  ObjectSpace.each_object(Gem::Specification) do |gem|
