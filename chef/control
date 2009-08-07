@@ -32,7 +32,7 @@ Description: Creates search indexes of Chef node attributes
 
 Package: chef-server
 Architecture: all
-Depends: ${misc:Depends}, ruby, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, chef-server-slice, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby, chef-indexe, libchef-ruby
+Depends: ${misc:Depends}, ruby, merb-slices, libmerb-assets-ruby, libmerb-haml-ruby, libmerb-helpers-ruby, chef-server-slice, stompserver, couchdb, libferret-ruby, mongrel, libopenid-ruby, libjson-ruby, libsyntax-ruby, chef-indexer, libchef-ruby
 Recommends: rake
 Suggests: thin, nginx, apache2
 Description: Merb application providing centralized management for Chef
