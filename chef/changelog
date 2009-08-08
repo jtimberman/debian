@@ -1,3 +1,9 @@
+chef (0.7.6-1) unstable; urgency=low
+
+   * New upstream version.
+
+ -- Joshua Timberman <joshua@opscode.com>  Fri, 07 Aug 2009 19:41:16 -0600
+
 chef (0.7.4-1) unstable; urgency=low
 
    * Initial release (Closes: #529392)
