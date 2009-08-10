@@ -1,0 +1,66 @@
+Source: coderay
+Section: ruby
+Priority: extra
+Maintainer: Joshua Timberman <joshua@opscode.com>
+Build-Depends: debhelper (>= 7), cdbs, ruby-pkg-tools (>= 0.8)
+Build-Depends-Indep: ruby
+Standards-Version: 3.8.2
+Homepage: http://coderay.rubychan.de/
+
+Package: coderay
+Architecture: all
+Depends: ${misc:Depends}, ruby, libcoderay-ruby
+Description: Helper programs for CodeRay Ruby lib for syntax highlighting
+ Syntax highlighting means: You put your code in, and you get it back 
+ colored; Keywords, strings, floats, comments - all in different colors. 
+ And with line numbers.
+ .
+ .
+   * makes code easier to read and maintain
+   * lets you detect syntax errors faster
+   * helps you to understand the syntax of a language
+   * looks nice
+   * is what everybody should have on their website
+
+Package: libcoderay-ruby
+Architecture: all
+Depends: ${misc:Depends}, libcoderay-ruby1.8
+Description: Ruby library for syntax highlighting
+ Syntax highlighting means: You put your code in, and you get it back 
+ colored; Keywords, strings, floats, comments - all in different colors. 
+ And with line numbers.
+ .
+ .
+   * makes code easier to read and maintain
+   * lets you detect syntax errors faster
+   * helps you to understand the syntax of a language
+   * looks nice
+   * is what everybody should have on their website
+ .
+ This package is part of the Ruby library extras, a suplement to Ruby's 
+ standard library.
+ .
+ This is a dummy package depending on the library for the current default
+ version of Ruby.
+
+Package: libcoderay-ruby1.8
+Architecture: all
+Depends: ${misc:Depends}, ruby1.8
+Description: Ruby 1.8 library for syntax highlighting
+ Syntax highlighting means: You put your code in, and you get it back 
+ colored; Keywords, strings, floats, comments - all in different colors. 
+ And with line numbers.
+ .
+ Syntax Highlighting
+   * makes code easier to read and maintain
+   * lets you detect syntax errors faster
+   * helps you to understand the syntax of a language
+   * looks nice
+   * is what everybody should have on their website
+   * solves all your problems and makes the girls run after you
+ .
+ This package is part of the Ruby library extras, a suplement to Ruby's 
+ standard library.
+ .
+ This package is part of the Ruby library extras, a supplement to Ruby's
+ standard library for version 1.8.

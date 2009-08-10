@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+# CDBS file to build the Ruby CodeRay package.
+#
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/ruby-pkg-tools/1/class/ruby-setup-rb.mk
+
+install/coderay::
+	dh_installdirs
+
+install/libcoderay-ruby1.8::
+	mv $(CURDIR)/debian/libcoderay-ruby1.8/usr/bin/coderay* $(CURDIR)/debian/coderay/usr/bin/
+	rmdir $(CURDIR)/debian/libcoderay-ruby1.8/usr/bin
+	rm  $(CURDIR)/debian/libcoderay-ruby1.8/usr/lib/ruby/1.8/README
+	rm -rf $(CURDIR)/debian/libcoderay-ruby1.8/usr/lib/ruby/1.8/term
+
