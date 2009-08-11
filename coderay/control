@@ -9,7 +9,7 @@ Homepage: http://coderay.rubychan.de/
 
 Package: coderay
 Architecture: all
-Depends: ${misc:Depends}, ruby, libcoderay-ruby
+Depends: ${misc:Depends}, ruby1.8, libcoderay-ruby
 Description: Helper programs for CodeRay Ruby lib for syntax highlighting
  Syntax highlighting means: You put your code in, and you get it back 
  colored; Keywords, strings, floats, comments - all in different colors. 
