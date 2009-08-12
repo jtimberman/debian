@@ -1,6 +1,5 @@
-chef (0.7.8-1) karmic; urgency=low
+chef (0.7.8-1) unstable; urgency=low
 
    * Initial release (Closes: #529392) 
-   * Initial release (LP: #404403)
 
  -- Joshua Timberman <joshua@opscode.com>  Wed, 12 Aug 2009 12:18:48 -0600
