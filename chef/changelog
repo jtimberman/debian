@@ -1,5 +1,5 @@
-chef (0.7.6-1) unstable; urgency=low
+chef (0.7.8-1) unstable; urgency=low
 
    * Initial release (Closes: #529392)
 
- -- Joshua Timberman <joshua@opscode.com>  Sat, 08 Aug 2009 00:03:54 -0600
+ -- Joshua Timberman <joshua@opscode.com>  Wed, 12 Aug 2009 12:18:48 -0600
