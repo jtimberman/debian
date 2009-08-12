@@ -30,7 +30,6 @@ install/chef::
 	dh_installinit --name chef-client 
 	cp -rf $(CURDIR)/debian/etc/chef/client.rb $(CURDIR)/debian/chef/etc/chef
 	cp -rf $(CURDIR)/debian/etc/chef/solo.rb $(CURDIR)/debian/chef/etc/chef
-	dh_installchangelogs
 	dh_installdirs
 
 install/libchef-ruby1.8::
@@ -43,7 +42,6 @@ install/libchef-ruby1.8::
 	rmdir $(CURDIR)/debian/libchef-ruby1.8/usr/bin/
 
 install/chef-indexer::
-	dh_installchangelogs
 	dh_installdirs
 	cp debian/etc/chef/indexer.rb debian/chef-indexer/etc/chef
 	cp chef-server/bin/chef-indexer debian/chef-indexer/usr/bin
@@ -66,7 +64,6 @@ install/chef-server-slice::
 	cp -rf chef-server-slice/lib debian/chef-server-slice/usr/share/chef-server-slice
 	rm debian/chef-server-slice/usr/share/chef-server-slice/public/images/treeBuilderImages/Thumbs.db
 	find debian/chef-server-slice -type f -perm +755 -exec chmod 644 {} \;
-	dh_installchangelogs
 	dh_installdirs
 
 clean::
