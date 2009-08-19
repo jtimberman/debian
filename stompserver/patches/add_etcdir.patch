@@ -1,0 +1,21 @@
+Index: stompserver-0.9.9/lib/stomp_server.rb
+===================================================================
+--- stompserver-0.9.9.orig/lib/stomp_server.rb	2009-08-18 15:10:29.407901171 -0600
++++ stompserver-0.9.9/lib/stomp_server.rb	2009-08-18 15:10:48.529786640 -0600
+@@ -28,6 +28,7 @@
+         :working_dir => Dir.getwd,
+         :storage => ".stompserver",
+         :logdir => 'log',
++        :etcdir => 'etc',
+         :configfile => 'stompserver.conf',
+         :logfile => 'stompserver.log',
+         :pidfile => 'stompserver.pid',
+@@ -63,7 +64,7 @@
+         opts = @defaults
+       end
+ 
+-      opts[:etcdir] = File.join(opts[:working_dir],'etc')
++      opts[:etcdir] = File.join(opts[:working_dir],opts[:etcdir])
+       opts[:storage] = File.join(opts[:working_dir],opts[:storage])
+       opts[:logdir] = File.join(opts[:working_dir],opts[:logdir])
+       opts[:logfile] = File.join(opts[:logdir],opts[:logfile])

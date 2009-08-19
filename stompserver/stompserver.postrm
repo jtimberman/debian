@@ -1,0 +1,22 @@
+#! /bin/sh
+
+case "$1" in
+    purge)
+        rm -rf /var/lib/stompserver
+        /usr/sbin/deluser --system stompserver
+        /usr/sbin/delgroup --system stompserver
+        rm -f /etc/stompserver/stompserver.conf
+    ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+
+esac
+
+#DEBHELPER#
+
+exit 0

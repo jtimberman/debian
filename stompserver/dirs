@@ -1,0 +1,2 @@
+var/lib/stompserver
+var/log/stompserver
