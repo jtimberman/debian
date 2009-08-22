@@ -1,14 +1,13 @@
 Source: merb
 Section: ruby
 Priority: extra
-Maintainer: Joshua Timberman <joshua@opscode.com>
-Uploaders: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>, Joshua Timberman <joshua@opscode.com>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Joshua Timberman <joshua@opscode.com>
+Uploaders: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
 Build-Depends: cdbs, debhelper (>= 7), ruby-pkg-tools (>= 0.14), quilt
 Build-Depends-Indep: ruby1.8, rake
 Standards-Version: 3.8.2
 Homepage: http://merbivore.com
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-ruby-extras/packages/merb/trunk/
-Vcs-Svn: svn://svn.debian.org/pkg-ruby-extras/packages/merb/trunk/
 
 Package: merb-core
 Architecture: all
@@ -35,7 +34,7 @@ Description: Merb plugin to modularize an application by creating 'slices'
  Installing this package will provide the capability to run a Merb application
  slice.
  .
- This package contains the slice binary and associated files.
+ This package contains the merb-slice binary and associated files.
 
 Package: libmerb-core-ruby
 Architecture: all

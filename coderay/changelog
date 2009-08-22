@@ -1,5 +1,5 @@
-coderay (0.8.3-1) unstable; urgency=low
+coderay (0.8.3-0ubuntu1) karmic; urgency=low
 
-  * Initial release (Closes: #540662)
+  * Initial release (LP: #411036)
 
  -- Joshua Timberman <joshua@opscode.com>  Sun, 09 Aug 2009 08:07:54 -0600

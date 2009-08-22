@@ -1,9 +1,11 @@
-# Remove rubygems from the various bits of chef.
+# Description: Remove rubygems from the various bits of chef.
 # Also set up chef-server program to load slice correctly due to no rubygems.
+# No upstream patch/ticket filed yet, still discussing how we're going to 
+# approach this to be applicable to other platforms than Debian/Ubuntu.
 Index: chef-0.7.8/chef-server/bin/chef-indexer
 ===================================================================
---- chef-0.7.8.orig/chef-server/bin/chef-indexer	2009-08-05 15:52:22.000000000 -0600
-+++ chef-0.7.8/chef-server/bin/chef-indexer	2009-08-05 15:52:31.000000000 -0600
+--- chef-0.7.8.orig/chef-server/bin/chef-indexer	2009-08-20 14:56:55.171895794 -0600
++++ chef-0.7.8/chef-server/bin/chef-indexer	2009-08-20 14:58:38.375887954 -0600
 @@ -20,7 +20,6 @@
  
  $: << File.join(File.dirname(__FILE__), "..", "lib")
@@ -16,8 +18,8 @@ Index: chef-0.7.8/chef-server/bin/chef-indexer
 +Chef::Application::Indexer.new.run
 Index: chef-0.7.8/chef-server/bin/chef-server
 ===================================================================
---- chef-0.7.8.orig/chef-server/bin/chef-server	2009-08-05 17:22:54.000000000 -0600
-+++ chef-0.7.8/chef-server/bin/chef-server	2009-08-05 17:25:20.000000000 -0600
+--- chef-0.7.8.orig/chef-server/bin/chef-server	2009-08-20 14:56:55.151889438 -0600
++++ chef-0.7.8/chef-server/bin/chef-server	2009-08-20 14:58:38.375887954 -0600
 @@ -23,13 +23,10 @@
  # Add chef and chef-server-slice lib dirs to the load path
  # Load chef and chef-server slice from source rather than gem, if present
@@ -54,8 +56,8 @@ Index: chef-0.7.8/chef-server/bin/chef-server
  if ARGV[0] && ARGV[0] =~ /^[^-]/
 Index: chef-0.7.8/chef-server/public/merb.fcgi
 ===================================================================
---- chef-0.7.8.orig/chef-server/public/merb.fcgi	2009-08-05 15:54:06.000000000 -0600
-+++ chef-0.7.8/chef-server/public/merb.fcgi	2009-08-05 15:54:10.000000000 -0600
+--- chef-0.7.8.orig/chef-server/public/merb.fcgi	2009-08-20 14:56:55.191856158 -0600
++++ chef-0.7.8/chef-server/public/merb.fcgi	2009-08-20 14:58:38.375887954 -0600
 @@ -1,6 +1,5 @@
  #!/usr/bin/env ruby
                                                                 
@@ -72,8 +74,14 @@ Index: chef-0.7.8/chef-server/public/merb.fcgi
 +           :log_file => merb_root /'log'/'merb.log')
 Index: chef-0.7.8/chef/bin/chef-client
 ===================================================================
---- chef-0.7.8.orig/chef/bin/chef-client	2009-08-05 15:52:41.000000000 -0600
-+++ chef-0.7.8/chef/bin/chef-client	2009-08-05 15:52:48.000000000 -0600
+--- chef-0.7.8.orig/chef/bin/chef-client	2009-08-20 14:56:55.207683729 -0600
++++ chef-0.7.8/chef/bin/chef-client	2009-08-20 14:58:41.964123959 -0600
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env ruby
++#! /usr/bin/ruby1.8
+ #
+ # ./chef-client - Run the chef client
+ #
 @@ -20,7 +20,6 @@
  
  $: << File.join(File.dirname(__FILE__), "..", "lib")
@@ -86,8 +94,14 @@ Index: chef-0.7.8/chef/bin/chef-client
 +Chef::Application::Client.new.run
 Index: chef-0.7.8/chef/bin/chef-solo
 ===================================================================
---- chef-0.7.8.orig/chef/bin/chef-solo	2009-08-05 15:52:54.000000000 -0600
-+++ chef-0.7.8/chef/bin/chef-solo	2009-08-05 15:52:58.000000000 -0600
+--- chef-0.7.8.orig/chef/bin/chef-solo	2009-08-20 14:56:55.227719673 -0600
++++ chef-0.7.8/chef/bin/chef-solo	2009-08-20 14:58:41.964123959 -0600
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env ruby
++#! /usr/bin/ruby1.8
+ #
+ # ./chef-solo - Run the chef client, in stand-alone mode
+ #
 @@ -20,7 +20,6 @@
  
  $: << File.join(File.dirname(__FILE__), "..", "lib")
@@ -98,8 +112,8 @@ Index: chef-0.7.8/chef/bin/chef-solo
  Chef::Application::Solo.new.run
 Index: chef-0.7.8/chef/lib/chef.rb
 ===================================================================
---- chef-0.7.8.orig/chef/lib/chef.rb	2009-08-05 15:55:38.000000000 -0600
-+++ chef-0.7.8/chef/lib/chef.rb	2009-08-05 15:55:47.000000000 -0600
+--- chef-0.7.8.orig/chef/lib/chef.rb	2009-08-20 14:56:55.239908163 -0600
++++ chef-0.7.8/chef/lib/chef.rb	2009-08-20 14:58:38.375887954 -0600
 @@ -19,7 +19,6 @@
  $:.unshift(File.dirname(__FILE__)) unless
    $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
@@ -110,8 +124,8 @@ Index: chef-0.7.8/chef/lib/chef.rb
  require 'chef/log'
 Index: chef-0.7.8/chef/lib/chef/openid_registration.rb
 ===================================================================
---- chef-0.7.8.orig/chef/lib/chef/openid_registration.rb	2009-08-05 15:55:16.000000000 -0600
-+++ chef-0.7.8/chef/lib/chef/openid_registration.rb	2009-08-05 15:55:24.000000000 -0600
+--- chef-0.7.8.orig/chef/lib/chef/openid_registration.rb	2009-08-20 14:56:55.263837175 -0600
++++ chef-0.7.8/chef/lib/chef/openid_registration.rb	2009-08-20 14:58:38.375887954 -0600
 @@ -20,7 +20,6 @@
  require 'chef/mixin/params_validate'
  require 'chef/couchdb'

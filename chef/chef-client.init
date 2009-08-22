@@ -78,17 +78,17 @@ stop_server() {
 reload_server() {                                                               
   [ ! -f "$PIDFILE" ] && return 1                                             
   pid=pidofproc $PIDFILE # This is the daemon's pid                           
-  kill -1 $pid
+  /bin/kill -1 $pid
   return $?
 }   
 
 force_stop() {
   [ ! -e "$PIDFILE" ] && return
   if running ; then
-    kill -15 $pid
+    /bin/kill -15 $pid
     sleep "$DIETIME"s
     if running ; then
-      kill -9 $pid
+      /bin/kill -9 $pid
       sleep "$DIETIME"s
       if running ; then
         echo "Cannot kill $NAME (pid=$pid)!"
@@ -157,7 +157,7 @@ case "$1" in
     else
       log_progress_msg "apparently not running"
       log_end_msg 1
-      exit 1
+      exit 3
     fi
     ;;
   reload)

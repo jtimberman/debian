@@ -1,0 +1,2 @@
+# jquery package from Karmic is untested with chef-server and is pending upstream review.
+W: chef-server: embedded-javascript-library usr/share/chef-server/public/javascripts/jquery.js

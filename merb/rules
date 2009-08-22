@@ -136,7 +136,8 @@ install/libmerb-slices-ruby1.8::
 	(cd merb-slices && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) config $(DEB_RUBY_CONFIG_ARGS))
 	(cd merb-slices && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) setup)
 	(cd merb-slices && /usr/bin/ruby $(DEB_RUBY_SETUP_CMD) install --prefix=../debian/libmerb-slices-ruby1.8)
-	mv $(CURDIR)/debian/libmerb-slices-ruby1.8/usr/bin/slice $(CURDIR)/debian/merb-slices/usr/bin/
+	rm $(CURDIR)/debian/libmerb-slices-ruby1.8/usr/lib/ruby/1.8/generators/templates/common/LICENSE
+	mv $(CURDIR)/debian/libmerb-slices-ruby1.8/usr/bin/slice $(CURDIR)/debian/merb-slices/usr/bin/merb-slice
 	rmdir $(CURDIR)/debian/libmerb-slices-ruby1.8/usr/bin/
 
 install/libmerb-assets-ruby1.8::

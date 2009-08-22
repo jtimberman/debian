@@ -1,10 +1,12 @@
-# Because we're not using the typical rubygems method of running Chef, the 
-# slice needs to manually load its root directory and the location of
-# controllers and views.
+# Description: Because we're not using the typical rubygems method of running 
+# Chef, the slice needs to manually load its root directory and the location of
+# controllers and views. 
+# No upstream patch/ticket filed yet, still discussing how we're going to 
+# approach this to be applicable to other platforms than Debian/Ubuntu.
 Index: chef-0.7.8/chef-server-slice/lib/chef-server-slice.rb
 ===================================================================
---- chef-0.7.8.orig/chef-server-slice/lib/chef-server-slice.rb	2009-08-06 00:25:23.000000000 -0600
-+++ chef-0.7.8/chef-server-slice/lib/chef-server-slice.rb	2009-08-06 00:26:19.000000000 -0600
+--- chef-0.7.8.orig/chef-server-slice/lib/chef-server-slice.rb	2009-08-20 14:49:40.284071125 -0600
++++ chef-0.7.8/chef-server-slice/lib/chef-server-slice.rb	2009-08-20 14:50:15.740499619 -0600
 @@ -33,6 +33,10 @@
      # Stub classes loaded hook - runs before LoadClasses BootLoader
      # right after a slice's classes have been loaded internally.

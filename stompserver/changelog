@@ -1,0 +1,5 @@
+stompserver (0.9.9-0ubuntu1) karmic; urgency=low
+
+  * Initial release (LP: #413229)
+
+ -- Joshua Timberman <joshua@opscode.com>  Thu, 13 Aug 2009 12:25:59 -0600

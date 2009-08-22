@@ -1,5 +1,8 @@
-merb (1.0.12-1) unstable; urgency=low
+merb (1.0.12-0ubuntu1) karmic; urgency=low
 
-   * Initial release (Closes: #538928)
+   * Initial release (LP: #404399)
+   * Repack upstream tarball:
+     + Replaced upstream empty LICENSE file with MIT license
+     + Removed object files which are part of the webrat spec testing.
 
  -- Joshua Timberman <joshua@opscode.com>  Mon, 27 Jul 2009 23:38:37 -0600

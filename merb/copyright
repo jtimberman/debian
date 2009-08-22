@@ -7,6 +7,8 @@ Upstream Authors: Yehuda Katz <ykatz@engineyard.com>
 
 Copyright (c) 2008 Engine Yard Inc.
 
+    Merb is released under the MIT License.
+
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
     "Software"), to deal in the Software without restriction, including
@@ -26,3 +28,5 @@ Copyright (c) 2008 Engine Yard Inc.
     OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+The Debian packaging is Copyright (c) 2009 Joshua Timberman and is licensed
+under the MIT License as above.
