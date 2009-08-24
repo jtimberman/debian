@@ -1,4 +1,4 @@
-merb (1.0.12-0ubuntu1) karmic; urgency=low
+merb (1.0.12+dfsg-0ubuntu1) karmic; urgency=low
 
    * Initial release (LP: #404399)
    * Repack upstream tarball:

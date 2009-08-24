@@ -30,3 +30,9 @@ Copyright (c) 2008 Engine Yard Inc.
 
 The Debian packaging is Copyright (c) 2009 Joshua Timberman and is licensed
 under the MIT License as above.
+
+./merb-core/spec/public/core_ext/fixtures/gems/gems
+./merb-core/spec10/public/core_ext/fixtures/gems/gems
+./merb-core/spec10/public/webrat/test_app/gems/gems
+    Files in these directories were removed as the distributability is not
+    confirmed for these gems. See README.source.
