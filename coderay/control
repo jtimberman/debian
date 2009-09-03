@@ -1,8 +1,7 @@
 Source: coderay
 Section: ruby
 Priority: extra
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
-XSBC-Original-Maintainer: Joshua Timberman <joshua@opscode.com>
+Maintainer: Joshua Timberman <joshua@opscode.com>
 Uploaders: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
 Build-Depends: debhelper (>= 7), cdbs, ruby-pkg-tools (>= 0.8)
 Build-Depends-Indep: ruby1.8
