@@ -4,6 +4,11 @@ debian/patches and applied during the build.
 
 See /usr/share/doc/quilt/README.source for a detailed explanation.
 
+The upstream source has been modified to remove a generated PDF file
+with no distinguishable source:
+
+./merb-core/docs/merb-core-call-stack-diagram.pdf
+
 The upstream source has also been modified to remove gems from the 
 specs, as the distributability is not confirmed for the gems. As
 a result, the spec tests for Merb will not work straight from the source
