@@ -1,2 +1,3 @@
 version=3
-http://githubredir.debian.net/github/wycats/merb /(.*).tar.gz
+opts=dversionmangle=s/\+dfsg// \
+  http://githubredir.debian.net/github/wycats/merb /(.*).tar.gz
